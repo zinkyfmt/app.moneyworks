@@ -1,0 +1,723 @@
+.icon-Lock { background-image: url('png/Lock.png'); background-repeat: no-repeat; }
+
+.icon-Lock_mobile { background-image: url('png/Lock_mobile.png'); background-repeat: no-repeat; }
+
+.icon-Shredder { background-image: url('png/Shredder.png'); background-repeat: no-repeat; }
+
+.icon-Vault { background-image: url('png/Vault.png'); background-repeat: no-repeat; }
+
+.icon-accounts-icons { background-image: url('png/accounts-icons.png'); background-repeat: no-repeat; }
+
+.icon-accounts-tab-icon-banks { background-image: url('png/accounts-tab-icon-banks.png'); background-repeat: no-repeat; }
+
+.widget-section.complete .circle,
+.widget-section.active .circle,
+.icon-accounts-tab-icon-complete { background-image: url('png/accounts-tab-icon-complete.png'); background-repeat: no-repeat; }
+
+.icon-accounts-tab-icon-creditcards { background-image: url('png/accounts-tab-icon-creditcards.png'); background-repeat: no-repeat; }
+
+.icon-accounts-tab-icon-investments { background-image: url('png/accounts-tab-icon-investments.png'); background-repeat: no-repeat; }
+
+.icon-accounts-tab-icon-loans { background-image: url('png/accounts-tab-icon-loans.png'); background-repeat: no-repeat; }
+
+.icon-acorns-logo { background-image: url('png/acorns-logo.png'); background-repeat: no-repeat; }
+
+.icon-ai-link { background-image: url('png/ai-link.png'); background-repeat: no-repeat; }
+
+.icon-ai-quote { background-image: url('png/ai-quote.png'); background-repeat: no-repeat; }
+
+.icon-ai-upload { background-image: url('png/ai-upload.png'); background-repeat: no-repeat; }
+
+.widget-section.incomplete .circle,
+.icon-alert { background-image: url('png/alert.png'); background-repeat: no-repeat; }
+
+.detail-select-list-cta:before,
+.help-cta:before,
+.icon-arrow-right-green { background-image: url('png/arrow-right-green.png'); background-repeat: no-repeat; }
+
+.careers-more-detail:after,
+.primary-button-with-arrow-next-to-text:after,
+.icon-arrow-right-sprite { background-image: url('png/arrow-right-sprite.png'); background-repeat: no-repeat; }
+
+.icon-arrow_down_green_large { background-image: url('png/arrow_down_green_large.png'); background-repeat: no-repeat; }
+
+.icon-arrow_down_grey_large { background-image: url('png/arrow_down_grey_large.png'); background-repeat: no-repeat; }
+
+.icon-arrow_down_white_large { background-image: url('png/arrow_down_white_large.png'); background-repeat: no-repeat; }
+
+.icon-autopay-discount { background-image: url('png/autopay-discount.png'); background-repeat: no-repeat; }
+
+.icon-autopay-mind { background-image: url('png/autopay-mind.png'); background-repeat: no-repeat; }
+
+.icon-autopay-payment { background-image: url('png/autopay-payment.png'); background-repeat: no-repeat; }
+
+.icon-bank-loan-overview { background-image: url('png/bank-loan-overview.png'); background-repeat: no-repeat; }
+
+.icon-beneplace-logo { background-image: url('png/beneplace-logo.png'); background-repeat: no-repeat; }
+
+.icon-betterment-logo { background-image: url('png/betterment-logo.png'); background-repeat: no-repeat; }
+
+.icon-binti-logo { background-image: url('png/binti-logo.png'); background-repeat: no-repeat; }
+
+.icon-bloc-logo { background-image: url('png/bloc-logo.png'); background-repeat: no-repeat; }
+
+.icon-calendar { background-image: url('png/calendar.png'); background-repeat: no-repeat; }
+
+.icon-calendar_close { background-image: url('png/calendar_close.png'); background-repeat: no-repeat; }
+
+.icon-campus-logo { background-image: url('png/campus-logo.png'); background-repeat: no-repeat; }
+
+.icon-cancel { background-image: url('png/cancel.png'); background-repeat: no-repeat; }
+
+.icon-carat { background-image: url('png/carat.png'); background-repeat: no-repeat; }
+
+.icon-carlypso-logo { background-image: url('png/carlypso-logo.png'); background-repeat: no-repeat; }
+
+.icon-caution { background-image: url('png/caution.png'); background-repeat: no-repeat; }
+
+.icon-ch-chat { background-image: url('png/ch-chat.png'); background-repeat: no-repeat; }
+
+.icon-ch-email-mobile { background-image: url('png/ch-email-mobile.png'); background-repeat: no-repeat; }
+
+.icon-ch-email { background-image: url('png/ch-email.png'); background-repeat: no-repeat; }
+
+.icon-ch-phone-mobile { background-image: url('png/ch-phone-mobile.png'); background-repeat: no-repeat; }
+
+.icon-ch-phone { background-image: url('png/ch-phone.png'); background-repeat: no-repeat; }
+
+.icon-change-amount { background-image: url('png/change-amount.png'); background-repeat: no-repeat; }
+
+.icon-chat-bubble-green-small { background-image: url('png/chat-bubble-green-small.png'); background-repeat: no-repeat; }
+
+.icon-chat-bubble-green { background-image: url('png/chat-bubble-green.png'); background-repeat: no-repeat; }
+
+.icon-chat-bubble { background-image: url('png/chat-bubble.png'); background-repeat: no-repeat; }
+
+.icon-chat { background-image: url('png/chat.png'); background-repeat: no-repeat; }
+
+.icon-check-green { background-image: url('png/check-green.png'); background-repeat: no-repeat; }
+
+.checkbox-list label:before,
+.checkbox-list label:after,
+.checkbox-row label:before,
+.checkbox-row label:after,
+.icon-checkbox { background-image: url('png/checkbox.png'); background-repeat: no-repeat; }
+
+.detail-list li:before,
+.icon-checkmark-green { background-image: url('png/checkmark-green.png'); background-repeat: no-repeat; }
+
+.icon-circle-check-gray { background-image: url('png/circle-check-gray.png'); background-repeat: no-repeat; }
+
+.icon-circle-check-green { background-image: url('png/circle-check-green.png'); background-repeat: no-repeat; }
+
+.icon-circle-plus { background-image: url('png/circle-plus.png'); background-repeat: no-repeat; }
+
+.icon-circle-remove-button { background-image: url('png/circle-remove-button.png'); background-repeat: no-repeat; }
+
+.icon-close { background-image: url('png/close.png'); background-repeat: no-repeat; }
+
+.icon-code-fellows-logo { background-image: url('png/code-fellows-logo.png'); background-repeat: no-repeat; }
+
+.icon-codercamps-logo { background-image: url('png/codercamps-logo.png'); background-repeat: no-repeat; }
+
+.icon-codervox-logo { background-image: url('png/codervox-logo.png'); background-repeat: no-repeat; }
+
+.icon-coding-dojo-logo { background-image: url('png/coding-dojo-logo.png'); background-repeat: no-repeat; }
+
+.icon-compare-circle-chart { background-image: url('png/compare-circle-chart.png'); background-repeat: no-repeat; }
+
+.icon-compelling-benefit { background-image: url('png/compelling-benefit.png'); background-repeat: no-repeat; }
+
+.icon-competitor-circle-chart-mobile { background-image: url('png/competitor-circle-chart-mobile.png'); background-repeat: no-repeat; }
+
+.secondary-solid-button-with-checkmark:before,
+.icon-complete-check { background-image: url('png/complete-check.png'); background-repeat: no-repeat; }
+
+.icon-cooley-logo { background-image: url('png/cooley-logo.png'); background-repeat: no-repeat; }
+
+.icon-cosign-invite { background-image: url('png/cosign-invite.png'); background-repeat: no-repeat; }
+
+.icon-creditkarma-logo { background-image: url('png/creditkarma-logo.png'); background-repeat: no-repeat; }
+
+.icon-custom-loan-thick { background-image: url('png/custom-loan-thick.png'); background-repeat: no-repeat; }
+
+.icon-custom-loan { background-image: url('png/custom-loan.png'); background-repeat: no-repeat; }
+
+.icon-dashboard { background-image: url('png/dashboard.png'); background-repeat: no-repeat; }
+
+#student-landing-body #section-details:before,
+#personal-landing-body #section-details:before,
+.icon-data-web-left { background-image: url('png/data-web-left.png'); background-repeat: no-repeat; }
+
+#student-landing-body #section-details:after,
+#personal-landing-body #section-details:after,
+.icon-data-web-right { background-image: url('png/data-web-right.png'); background-repeat: no-repeat; }
+
+.icon-data-web-top { background-image: url('png/data-web-top.png'); background-repeat: no-repeat; }
+
+.icon-deposit { background-image: url('png/deposit.png'); background-repeat: no-repeat; }
+
+.icon-dev-mtn-logo { background-image: url('png/dev-mtn-logo.png'); background-repeat: no-repeat; }
+
+.icon-difference-fees { background-image: url('png/difference-fees.png'); background-repeat: no-repeat; }
+
+.icon-difference-merit { background-image: url('png/difference-merit.png'); background-repeat: no-repeat; }
+
+.icon-difference-relationship { background-image: url('png/difference-relationship.png'); background-repeat: no-repeat; }
+
+.icon-difference-secure { background-image: url('png/difference-secure.png'); background-repeat: no-repeat; }
+
+.icon-doctor-on-demand-logo { background-image: url('png/doctor-on-demand-logo.png'); background-repeat: no-repeat; }
+
+.icon-document-loan-overview { background-image: url('png/document-loan-overview.png'); background-repeat: no-repeat; }
+
+.icon-document-upload { background-image: url('png/document-upload.png'); background-repeat: no-repeat; }
+
+.icon-earnest-est-logo { background-image: url('png/earnest-est-logo.png'); background-repeat: no-repeat; }
+
+.icon-earnest-logo-green-mobile { background-image: url('png/earnest-logo-green-mobile.png'); background-repeat: no-repeat; }
+
+.icon-easy-implementation { background-image: url('png/easy-implementation.png'); background-repeat: no-repeat; }
+
+.button-with-pencil,
+.icon-edit { background-image: url('png/edit.png'); background-repeat: no-repeat; }
+
+.icon-education-info-card { background-image: url('png/education-info-card.png'); background-repeat: no-repeat; }
+
+.icon-education { background-image: url('png/education.png'); background-repeat: no-repeat; }
+
+.icon-eligibility-bank { background-image: url('png/eligibility-bank.png'); background-repeat: no-repeat; }
+
+.icon-eligibility-degree { background-image: url('png/eligibility-degree.png'); background-repeat: no-repeat; }
+
+.icon-eligibility-development { background-image: url('png/eligibility-development.png'); background-repeat: no-repeat; }
+
+.icon-eligibility-employed { background-image: url('png/eligibility-employed.png'); background-repeat: no-repeat; }
+
+.icon-eligibility-employment { background-image: url('png/eligibility-employment.png'); background-repeat: no-repeat; }
+
+.icon-eligibility-history { background-image: url('png/eligibility-history.png'); background-repeat: no-repeat; }
+
+.icon-eligibility-income { background-image: url('png/eligibility-income.png'); background-repeat: no-repeat; }
+
+.icon-eligibility-savings { background-image: url('png/eligibility-savings.png'); background-repeat: no-repeat; }
+
+.ellipsis-dropdown,
+.icon-ellipsis { background-image: url('png/ellipsis.png'); background-repeat: no-repeat; }
+
+.icon-email-white-circle { background-image: url('png/email-white-circle.png'); background-repeat: no-repeat; }
+
+.employee-enrollment:before,
+.icon-employee-enrollment { background-image: url('png/employee-enrollment.png'); background-repeat: no-repeat; }
+
+.icon-employment-info-card { background-image: url('png/employment-info-card.png'); background-repeat: no-repeat; }
+
+.icon-employment { background-image: url('png/employment.png'); background-repeat: no-repeat; }
+
+.icon-enroll-autopay { background-image: url('png/enroll-autopay.png'); background-repeat: no-repeat; }
+
+.icon-error-screen { background-image: url('png/error-screen.png'); background-repeat: no-repeat; }
+
+.icon-error { background-image: url('png/error.png'); background-repeat: no-repeat; }
+
+.icon-error_close { background-image: url('png/error_close.png'); background-repeat: no-repeat; }
+
+.icon-estimate-rate { background-image: url('png/estimate-rate.png'); background-repeat: no-repeat; }
+
+.icon-extra-payment { background-image: url('png/extra-payment.png'); background-repeat: no-repeat; }
+
+.icon-eye-sprite { background-image: url('png/eye-sprite.png'); background-repeat: no-repeat; }
+
+.icon-facebook-white-circle { background-image: url('png/facebook-white-circle.png'); background-repeat: no-repeat; }
+
+.icon-field-indicator { background-image: url('png/field-indicator.png'); background-repeat: no-repeat; }
+
+.icon-field_info { background-image: url('png/field_info.png'); background-repeat: no-repeat; }
+
+.icon-field_info_question-mark { background-image: url('png/field_info_question-mark.png'); background-repeat: no-repeat; }
+
+.icon-field_info_small { background-image: url('png/field_info_small.png'); background-repeat: no-repeat; }
+
+.icon-file-upload-ID { background-image: url('png/file-upload-ID.png'); background-repeat: no-repeat; }
+
+.icon-file-upload-doc { background-image: url('png/file-upload-doc.png'); background-repeat: no-repeat; }
+
+.icon-file-upload-success { background-image: url('png/file-upload-success.png'); background-repeat: no-repeat; }
+
+.upload-type-list-container ul li::before,
+.icon-file-upload-types-check { background-image: url('png/file-upload-types-check.png'); background-repeat: no-repeat; }
+
+.icon-file-upload-types { background-image: url('png/file-upload-types.png'); background-repeat: no-repeat; }
+
+.icon-flatiron-logo { background-image: url('png/flatiron-logo.png'); background-repeat: no-repeat; }
+
+.icon-footer-facebook { background-image: url('png/footer-facebook.png'); background-repeat: no-repeat; }
+
+.icon-footer-linkedin { background-image: url('png/footer-linkedin.png'); background-repeat: no-repeat; }
+
+.icon-footer-twitter-alt { background-image: url('png/footer-twitter-alt.png'); background-repeat: no-repeat; }
+
+.icon-footer-twitter { background-image: url('png/footer-twitter.png'); background-repeat: no-repeat; }
+
+.icon-ga-logo { background-image: url('png/ga-logo.png'); background-repeat: no-repeat; }
+
+.icon-galvanize-logo { background-image: url('png/galvanize-logo.png'); background-repeat: no-repeat; }
+
+.icon-green-heart { background-image: url('png/green-heart.png'); background-repeat: no-repeat; }
+
+.icon-green-lock-big { background-image: url('png/green-lock-big.png'); background-repeat: no-repeat; }
+
+.icon-green-star { background-image: url('png/green-star.png'); background-repeat: no-repeat; }
+
+.accept-radio-button-list label:before,
+.icon-green_radio_button { background-image: url('png/green_radio_button.png'); background-repeat: no-repeat; }
+
+.icon-hack-reactor-logo { background-image: url('png/hack-reactor-logo.png'); background-repeat: no-repeat; }
+
+.icon-handshake { background-image: url('png/handshake.png'); background-repeat: no-repeat; }
+
+.icon-header-alert { background-image: url('png/header-alert.png'); background-repeat: no-repeat; }
+
+.icon-header-help { background-image: url('png/header-help.png'); background-repeat: no-repeat; }
+
+.icon-header_shadow { background-image: url('png/header_shadow.png'); background-repeat: no-repeat; }
+
+.icon-heart-green { background-image: url('png/heart-green.png'); background-repeat: no-repeat; }
+
+.title-with-green-heart:before,
+.icon-heart-light-green { background-image: url('png/heart-light-green.png'); background-repeat: no-repeat; }
+
+.title-with-heart:before,
+.icon-heart { background-image: url('png/heart.png'); background-repeat: no-repeat; }
+
+.icon-home { background-image: url('png/home.png'); background-repeat: no-repeat; }
+
+.icon-howitworks-education-grey { background-image: url('png/howitworks-education-grey.png'); background-repeat: no-repeat; }
+
+.icon-howitworks-education { background-image: url('png/howitworks-education.png'); background-repeat: no-repeat; }
+
+.icon-howitworks-employment-grey { background-image: url('png/howitworks-employment-grey.png'); background-repeat: no-repeat; }
+
+.icon-howitworks-employment { background-image: url('png/howitworks-employment.png'); background-repeat: no-repeat; }
+
+.icon-howitworks-financial-grey { background-image: url('png/howitworks-financial-grey.png'); background-repeat: no-repeat; }
+
+.icon-howitworks-financial { background-image: url('png/howitworks-financial.png'); background-repeat: no-repeat; }
+
+.icon-howitworks-linkedin-grey { background-image: url('png/howitworks-linkedin-grey.png'); background-repeat: no-repeat; }
+
+.icon-howitworks-linkedin { background-image: url('png/howitworks-linkedin.png'); background-repeat: no-repeat; }
+
+.icon-howitworks-personal-grey { background-image: url('png/howitworks-personal-grey.png'); background-repeat: no-repeat; }
+
+.icon-howitworks-personal { background-image: url('png/howitworks-personal.png'); background-repeat: no-repeat; }
+
+.icon-huge-impact { background-image: url('png/huge-impact.png'); background-repeat: no-repeat; }
+
+.icon-apple-logo,
+.icon-icon-apple-logo { background-image: url('png/icon-apple-logo.png'); background-repeat: no-repeat; }
+
+.icon-icon-arrow-down-black { background-image: url('png/icon-arrow-down-black.png'); background-repeat: no-repeat; }
+
+.select-list:after,
+.icon-icon-arrow-down-grey { background-image: url('png/icon-arrow-down-grey.png'); background-repeat: no-repeat; }
+
+.skinny-error-button-with-arrow:after,
+.icon-icon-arrow-down-red { background-image: url('png/icon-arrow-down-red.png'); background-repeat: no-repeat; }
+
+.primary-button-with-down-arrow:after,
+.icon-icon-arrow-down-white { background-image: url('png/icon-arrow-down-white.png'); background-repeat: no-repeat; }
+
+.icon-icon-arrow-left-grey { background-image: url('png/icon-arrow-left-grey.png'); background-repeat: no-repeat; }
+
+.pointer:before,
+.main-content-back-link,
+.icon-icon-arrow-left-lightgrey { background-image: url('png/icon-arrow-left-lightgrey.png'); background-repeat: no-repeat; }
+
+.icon-icon-arrow-left-white { background-image: url('png/icon-arrow-left-white.png'); background-repeat: no-repeat; }
+
+.icon-icon-arrow-right-big-green { background-image: url('png/icon-arrow-right-big-green.png'); background-repeat: no-repeat; }
+
+.slick-next:before,
+.slick-prev:before,
+.icon-icon-arrow-right-big-white { background-image: url('png/icon-arrow-right-big-white.png'); background-repeat: no-repeat; }
+
+.question-section:after,
+.primary-button-with-dark-arrow,
+.icon-icon-arrow-right-grey { background-image: url('png/icon-arrow-right-grey.png'); background-repeat: no-repeat; }
+
+.pointer:after,
+.icon-icon-arrow-right-lightgrey { background-image: url('png/icon-arrow-right-lightgrey.png'); background-repeat: no-repeat; }
+
+.primary-button-with-arrow:after,
+.hero-button-with-arrow:after,
+.primary-skinny-button-with-arrow:after,
+.primary-button-with-arrow-next-to-text:after,
+.transparent-button-with-arrow:after,
+.icon-icon-arrow-right-white { background-image: url('png/icon-arrow-right-white.png'); background-repeat: no-repeat; }
+
+.icon-icon-arrow-up-black { background-image: url('png/icon-arrow-up-black.png'); background-repeat: no-repeat; }
+
+.icon-icon-arrow-up-grey { background-image: url('png/icon-arrow-up-grey.png'); background-repeat: no-repeat; }
+
+#est-loan-purpose label span,
+.icon-icon-arrow-up-white { background-image: url('png/icon-arrow-up-white.png'); background-repeat: no-repeat; }
+
+.icon-icon-check-circle { background-image: url('png/icon-check-circle.png'); background-repeat: no-repeat; }
+
+.icon-icon-close-x-dark { background-image: url('png/icon-close-x-dark.png'); background-repeat: no-repeat; }
+
+#nav-view .close-menu,
+.icon-icon-close-x { background-image: url('png/icon-close-x.png'); background-repeat: no-repeat; }
+
+.icon-icon-plus-white { background-image: url('png/icon-plus-white.png'); background-repeat: no-repeat; }
+
+.icon-icon-search-grey { background-image: url('png/icon-search-grey.png'); background-repeat: no-repeat; }
+
+.icon-icon-security-large { background-image: url('png/icon-security-large.png'); background-repeat: no-repeat; }
+
+.icon-info-blue-small { background-image: url('png/info-blue-small.png'); background-repeat: no-repeat; }
+
+.icon-info-blue { background-image: url('png/info-blue.png'); background-repeat: no-repeat; }
+
+.icon-info-grey-small { background-image: url('png/info-grey-small.png'); background-repeat: no-repeat; }
+
+.icon-info { background-image: url('png/info.png'); background-repeat: no-repeat; }
+
+.section-alternating--adjust-payments .section-alternating-headline:before,
+.icon-ios-adjust-icon { background-image: url('png/ios-adjust-icon.png'); background-repeat: no-repeat; }
+
+.section-alternating--schedule-payments:before,
+.icon-ios-schedule-bg { background-image: url('png/ios-schedule-bg.png'); background-repeat: no-repeat; }
+
+.section-alternating--schedule-payments .section-alternating-headline:before,
+.icon-ios-schedule-icon { background-image: url('png/ios-schedule-icon.png'); background-repeat: no-repeat; }
+
+.icon-kithaus { background-image: url('png/kithaus.png'); background-repeat: no-repeat; }
+
+.icon-li-icon-id { background-image: url('png/li-icon-id.png'); background-repeat: no-repeat; }
+
+.icon-li-icon-secret { background-image: url('png/li-icon-secret.png'); background-repeat: no-repeat; }
+
+.icon-li-icon-time { background-image: url('png/li-icon-time.png'); background-repeat: no-repeat; }
+
+.icon-li-nouser-icon { background-image: url('png/li-nouser-icon.png'); background-repeat: no-repeat; }
+
+.lifetime-support:before,
+.icon-lifetime-support { background-image: url('png/lifetime-support.png'); background-repeat: no-repeat; }
+
+.icon-light-bulb { background-image: url('png/light-bulb.png'); background-repeat: no-repeat; }
+
+.icon-lightbulb-tip { background-image: url('png/lightbulb-tip.png'); background-repeat: no-repeat; }
+
+.icon-like { background-image: url('png/like.png'); background-repeat: no-repeat; }
+
+#profile-widget  .linkedin_image:after,
+.icon-linkedin-connected-icon { background-image: url('png/linkedin-connected-icon.png'); background-repeat: no-repeat; }
+
+.primary-solid-button-with-linkedin:before,
+.icon-linkedin-connected-white-icon { background-image: url('png/linkedin-connected-white-icon.png'); background-repeat: no-repeat; }
+
+.icon-linkedin-full { background-image: url('png/linkedin-full.png'); background-repeat: no-repeat; }
+
+.icon-linkedin-icon { background-image: url('png/linkedin-icon.png'); background-repeat: no-repeat; }
+
+.icon-linkedin-white-circle { background-image: url('png/linkedin-white-circle.png'); background-repeat: no-repeat; }
+
+.icon-linkedin_small { background-image: url('png/linkedin_small.png'); background-repeat: no-repeat; }
+
+.icon-loan-application { background-image: url('png/loan-application.png'); background-repeat: no-repeat; }
+
+.icon-loan-decision { background-image: url('png/loan-decision.png'); background-repeat: no-repeat; }
+
+.icon-loan-document-doc { background-image: url('png/loan-document-doc.png'); background-repeat: no-repeat; }
+
+.icon-loan-document-folder { background-image: url('png/loan-document-folder.png'); background-repeat: no-repeat; }
+
+.icon-loan-service { background-image: url('png/loan-service.png'); background-repeat: no-repeat; }
+
+.icon-loan-unavailable { background-image: url('png/loan-unavailable.png'); background-repeat: no-repeat; }
+
+.icon-lock-check { background-image: url('png/lock-check.png'); background-repeat: no-repeat; }
+
+.lock-disable,
+.icon-lock-disable { background-image: url('png/lock-disable.png'); background-repeat: no-repeat; }
+
+.primary-solid-button-with-lock:before,
+.icon-lock-green { background-image: url('png/lock-green.png'); background-repeat: no-repeat; }
+
+.icon-lock-grey { background-image: url('png/lock-grey.png'); background-repeat: no-repeat; }
+
+.icon-logo-green { background-image: url('png/logo-green.png'); background-repeat: no-repeat; }
+
+.icon-logo-white { background-image: url('png/logo-white.png'); background-repeat: no-repeat; }
+
+.icon-logo { background-image: url('png/logo.png'); background-repeat: no-repeat; }
+
+.icon-louis-sig { background-image: url('png/louis-sig.png'); background-repeat: no-repeat; }
+
+.icon-makersquare-logo { background-image: url('png/makersquare-logo.png'); background-repeat: no-repeat; }
+
+.icon-minus { background-image: url('png/minus.png'); background-repeat: no-repeat; }
+
+.icon-mobile_close { background-image: url('png/mobile_close.png'); background-repeat: no-repeat; }
+
+.icon-mobile_header_shadow { background-image: url('png/mobile_header_shadow.png'); background-repeat: no-repeat; }
+
+.icon-mobile_logo { background-image: url('png/mobile_logo.png'); background-repeat: no-repeat; }
+
+.icon-mobile_settings { background-image: url('png/mobile_settings.png'); background-repeat: no-repeat; }
+
+.icon-modal-close { background-image: url('png/modal-close.png'); background-repeat: no-repeat; }
+
+.icon-money-gear { background-image: url('png/money-gear.png'); background-repeat: no-repeat; }
+
+.icon-mouse-click-thick { background-image: url('png/mouse-click-thick.png'); background-repeat: no-repeat; }
+
+.icon-mouse-click { background-image: url('png/mouse-click.png'); background-repeat: no-repeat; }
+
+.icon-nav-arrow-down { background-image: url('png/nav-arrow-down.png'); background-repeat: no-repeat; }
+
+.icon-nav-menu { background-image: url('png/nav-menu.png'); background-repeat: no-repeat; }
+
+.icon-nav { background-image: url('png/nav.png'); background-repeat: no-repeat; }
+
+.icon-needed { background-image: url('png/needed.png'); background-repeat: no-repeat; }
+
+.icon-next_arrow_white_large { background-image: url('png/next_arrow_white_large.png'); background-repeat: no-repeat; }
+
+.icon-no-results { background-image: url('png/no-results.png'); background-repeat: no-repeat; }
+
+.icon-no-user { background-image: url('png/no-user.png'); background-repeat: no-repeat; }
+
+.ongoing-education:before,
+.icon-ongoing-education { background-image: url('png/ongoing-education.png'); background-repeat: no-repeat; }
+
+.icon-opendoor-logo { background-image: url('png/opendoor-logo.png'); background-repeat: no-repeat; }
+
+.icon-overview-pl { background-image: url('png/overview-pl.png'); background-repeat: no-repeat; }
+
+.icon-overview { background-image: url('png/overview.png'); background-repeat: no-repeat; }
+
+.icon-palantir-logo { background-image: url('png/palantir-logo.png'); background-repeat: no-repeat; }
+
+.transparent-button-with-paperclip:before,
+.icon-paperclip { background-image: url('png/paperclip.png'); background-repeat: no-repeat; }
+
+.icon-parent-calendar { background-image: url('png/parent-calendar.png'); background-repeat: no-repeat; }
+
+.icon-parent-gear { background-image: url('png/parent-gear.png'); background-repeat: no-repeat; }
+
+.icon-parent-laptop { background-image: url('png/parent-laptop.png'); background-repeat: no-repeat; }
+
+.icon-parent-refinance-web-mobile { background-image: url('png/parent-refinance-web-mobile.png'); background-repeat: no-repeat; }
+
+.icon-parent-security-lock-mobile { background-image: url('png/parent-security-lock-mobile.png'); background-repeat: no-repeat; }
+
+.icon-parent-security-lock { background-image: url('png/parent-security-lock.png'); background-repeat: no-repeat; }
+
+.icon-partnership-x { background-image: url('png/partnership-x.png'); background-repeat: no-repeat; }
+
+.icon-path-logo { background-image: url('png/path-logo.png'); background-repeat: no-repeat; }
+
+.icon-payment-account { background-image: url('png/payment-account.png'); background-repeat: no-repeat; }
+
+.icon-payment-date { background-image: url('png/payment-date.png'); background-repeat: no-repeat; }
+
+.icon-payment-partnership { background-image: url('png/payment-partnership.png'); background-repeat: no-repeat; }
+
+.icon-payment { background-image: url('png/payment.png'); background-repeat: no-repeat; }
+
+.icon-pencil-white { background-image: url('png/pencil-white.png'); background-repeat: no-repeat; }
+
+.icon-personal-loan-icon { background-image: url('png/personal-loan-icon.png'); background-repeat: no-repeat; }
+
+.icon-piggy-bank-green-thick { background-image: url('png/piggy-bank-green-thick.png'); background-repeat: no-repeat; }
+
+.icon-piggy-bank-green { background-image: url('png/piggy-bank-green.png'); background-repeat: no-repeat; }
+
+.icon-piggy-bank { background-image: url('png/piggy-bank.png'); background-repeat: no-repeat; }
+
+.icon-pillsbury-logo { background-image: url('png/pillsbury-logo.png'); background-repeat: no-repeat; }
+
+.icon-play_arrow { background-image: url('png/play_arrow.png'); background-repeat: no-repeat; }
+
+.icon-plus { background-image: url('png/plus.png'); background-repeat: no-repeat; }
+
+.icon-pricing-graph-mobile { background-image: url('png/pricing-graph-mobile.png'); background-repeat: no-repeat; }
+
+.icon-pricing-graph-tablet { background-image: url('png/pricing-graph-tablet.png'); background-repeat: no-repeat; }
+
+.icon-pricing-graph { background-image: url('png/pricing-graph.png'); background-repeat: no-repeat; }
+
+.icon-prime-logo { background-image: url('png/prime-logo.png'); background-repeat: no-repeat; }
+
+.icon-process-application { background-image: url('png/process-application.png'); background-repeat: no-repeat; }
+
+.icon-process-check-rate { background-image: url('png/process-check-rate.png'); background-repeat: no-repeat; }
+
+.icon-process-decision { background-image: url('png/process-decision.png'); background-repeat: no-repeat; }
+
+.icon-process-payoff { background-image: url('png/process-payoff.png'); background-repeat: no-repeat; }
+
+.icon-process-relationship { background-image: url('png/process-relationship.png'); background-repeat: no-repeat; }
+
+.icon-profile_stat_down { background-image: url('png/profile_stat_down.png'); background-repeat: no-repeat; }
+
+.icon-profile_stat_up { background-image: url('png/profile_stat_up.png'); background-repeat: no-repeat; }
+
+.icon-progress-divider-arrow { background-image: url('png/progress-divider-arrow.png'); background-repeat: no-repeat; }
+
+.radio-button-list label:before,
+.icon-radio_button { background-image: url('png/radio_button.png'); background-repeat: no-repeat; }
+
+.icon-radpad-logo { background-image: url('png/radpad-logo.png'); background-repeat: no-repeat; }
+
+.icon-refactoru-logo { background-image: url('png/refactoru-logo.png'); background-repeat: no-repeat; }
+
+.section-banner--refer-friends .section-banner-headline:before,
+.icon-refer-friends { background-image: url('png/refer-friends.png'); background-repeat: no-repeat; }
+
+.referral-content:before,
+.icon-referral-banner-heart { background-image: url('png/referral-banner-heart.png'); background-repeat: no-repeat; }
+
+.icon-referral-social-green { background-image: url('png/referral-social-green.png'); background-repeat: no-repeat; }
+
+.icon-referral-social-white { background-image: url('png/referral-social-white.png'); background-repeat: no-repeat; }
+
+.icon-referral { background-image: url('png/referral.png'); background-repeat: no-repeat; }
+
+.icon-refi { background-image: url('png/refi.png'); background-repeat: no-repeat; }
+
+.icon-refinance-web-2 { background-image: url('png/refinance-web-2.png'); background-repeat: no-repeat; }
+
+.icon-refinance-web-mobile { background-image: url('png/refinance-web-mobile.png'); background-repeat: no-repeat; }
+
+.icon-refinance-web-parent { background-image: url('png/refinance-web-parent.png'); background-repeat: no-repeat; }
+
+.icon-refinance-web { background-image: url('png/refinance-web.png'); background-repeat: no-repeat; }
+
+.icon-remove { background-image: url('png/remove.png'); background-repeat: no-repeat; }
+
+.icon-sample-partnership { background-image: url('png/sample-partnership.png'); background-repeat: no-repeat; }
+
+.icon-save { background-image: url('png/save.png'); background-repeat: no-repeat; }
+
+.icon-schedule { background-image: url('png/schedule.png'); background-repeat: no-repeat; }
+
+.icon-scroll-arrow { background-image: url('png/scroll-arrow.png'); background-repeat: no-repeat; }
+
+.icon-section-divider { background-image: url('png/section-divider.png'); background-repeat: no-repeat; }
+
+.icon-secure-grey { background-image: url('png/secure-grey.png'); background-repeat: no-repeat; }
+
+.icon-security-badge { background-image: url('png/security-badge.png'); background-repeat: no-repeat; }
+
+.icon-security-sell { background-image: url('png/security-sell.png'); background-repeat: no-repeat; }
+
+.icon-security-shield { background-image: url('png/security-shield.png'); background-repeat: no-repeat; }
+
+.icon-security-shredder { background-image: url('png/security-shredder.png'); background-repeat: no-repeat; }
+
+.plus_minus_toggle:before,
+.icon-select_plus_minus { background-image: url('png/select_plus_minus.png'); background-repeat: no-repeat; }
+
+.service-block.no-background-color:after,
+.icon-service-block-end-cap-no-background { background-image: url('png/service-block-end-cap-no-background.png'); background-repeat: no-repeat; }
+
+.service-block:after,
+.icon-service-block-end-cap { background-image: url('png/service-block-end-cap.png'); background-repeat: no-repeat; }
+
+.icon-service-face { background-image: url('png/service-face.png'); background-repeat: no-repeat; }
+
+.icon-shift-logo { background-image: url('png/shift-logo.png'); background-repeat: no-repeat; }
+
+.icon-skip-payment { background-image: url('png/skip-payment.png'); background-repeat: no-repeat; }
+
+.slider slider span.bubble:after,
+.icon-slider-bubble { background-image: url('png/slider-bubble.png'); background-repeat: no-repeat; }
+
+.icon-slider-minus { background-image: url('png/slider-minus.png'); background-repeat: no-repeat; }
+
+#section-culture .slick-slider .slick-dots li:nth-child(1).slick-active button:before,
+.icon-slider-nav_1 { background-image: url('png/slider-nav_1.png'); background-repeat: no-repeat; }
+
+#section-culture .slick-slider .slick-dots li:nth-child(2).slick-active button:before,
+.icon-slider-nav_2 { background-image: url('png/slider-nav_2.png'); background-repeat: no-repeat; }
+
+#section-culture .slick-slider .slick-dots li:nth-child(3).slick-active button:before,
+.icon-slider-nav_3 { background-image: url('png/slider-nav_3.png'); background-repeat: no-repeat; }
+
+#section-culture .slick-slider .slick-dots li:nth-child(4).slick-active button:before,
+.icon-slider-nav_4 { background-image: url('png/slider-nav_4.png'); background-repeat: no-repeat; }
+
+.icon-slider-plus { background-image: url('png/slider-plus.png'); background-repeat: no-repeat; }
+
+.icon-sneaky-face { background-image: url('png/sneaky-face.png'); background-repeat: no-repeat; }
+
+.icon-social-facebook { background-image: url('png/social-facebook.png'); background-repeat: no-repeat; }
+
+.linkedin-user-image:after,
+.icon-social-linkedin { background-image: url('png/social-linkedin.png'); background-repeat: no-repeat; }
+
+.icon-social-twitter { background-image: url('png/social-twitter.png'); background-repeat: no-repeat; }
+
+.icon-spinner { background-image: url('png/spinner.png'); background-repeat: no-repeat; }
+
+.check-summary-footer:before,
+.change-payment-account-summary-footer:before,
+.icon-star { background-image: url('png/star.png'); background-repeat: no-repeat; }
+
+.icon-status-bar-pending { background-image: url('png/status-bar-pending.png'); background-repeat: no-repeat; }
+
+.icon-stopwatch-grey { background-image: url('png/stopwatch-grey.png'); background-repeat: no-repeat; }
+
+.icon-telegraph-logo { background-image: url('png/telegraph-logo.png'); background-repeat: no-repeat; }
+
+.icon-thin-check { background-image: url('png/thin-check.png'); background-repeat: no-repeat; }
+
+.title-with-timer:before,
+.icon-timer { background-image: url('png/timer.png'); background-repeat: no-repeat; }
+
+.radio-list-with-green-check label:before,
+.icon-toggle-check-green { background-image: url('png/toggle-check-green.png'); background-repeat: no-repeat; }
+
+.radio-list-with-check label:before,
+.icon-toggle-check { background-image: url('png/toggle-check.png'); background-repeat: no-repeat; }
+
+.icon-tradecraft-logo { background-image: url('png/tradecraft-logo.png'); background-repeat: no-repeat; }
+
+.icon-turing-logo { background-image: url('png/turing-logo.png'); background-repeat: no-repeat; }
+
+.icon-twitter-white-circle { background-image: url('png/twitter-white-circle.png'); background-repeat: no-repeat; }
+
+.icon-uncollege-logo { background-image: url('png/uncollege-logo.png'); background-repeat: no-repeat; }
+
+.icon-uploaded { background-image: url('png/uploaded.png'); background-repeat: no-repeat; }
+
+.icon-user-nav-faq { background-image: url('png/user-nav-faq.png'); background-repeat: no-repeat; }
+
+.icon-user-nav-myloans { background-image: url('png/user-nav-myloans.png'); background-repeat: no-repeat; }
+
+.icon-user-nav-myprofile { background-image: url('png/user-nav-myprofile.png'); background-repeat: no-repeat; }
+
+.icon-user-nav-settings { background-image: url('png/user-nav-settings.png'); background-repeat: no-repeat; }
+
+.icon-user-nav-signout { background-image: url('png/user-nav-signout.png'); background-repeat: no-repeat; }
+
+.icon-values-design { background-image: url('png/values-design.png'); background-repeat: no-repeat; }
+
+.icon-values-dreams { background-image: url('png/values-dreams.png'); background-repeat: no-repeat; }
+
+.icon-values-failure { background-image: url('png/values-failure.png'); background-repeat: no-repeat; }
+
+.icon-values-prudence { background-image: url('png/values-prudence.png'); background-repeat: no-repeat; }
+
+.icon-values-trust { background-image: url('png/values-trust.png'); background-repeat: no-repeat; }
+
+.icon-values-value { background-image: url('png/values-value.png'); background-repeat: no-repeat; }
+
+.icon-view-eye { background-image: url('png/view-eye.png'); background-repeat: no-repeat; }
+
+.icon-work { background-image: url('png/work.png'); background-repeat: no-repeat; }
+
