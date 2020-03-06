@@ -605,7 +605,7 @@ if($model->owner_2_ssn != ''){
 
 <?php } ?>
 <div class="row action-row">
-	<a href="<?php echo Yii::app()->createUrl('account/financials');?>" class="primary-skinny-button-inverted bckbtn">Back</a>
+	<a href="<?php echo Yii::app()->createUrl('account/businessinfo');?>" class="primary-skinny-button-inverted bckbtn">Back</a>
 	<button class="hero-button-with-arrow ng-isolate-scope" type="submit" style="width:60%" >
 		<!-- ngIf: loading -->
 		<div class="button-transclude" ng-transclude=""><span class="ng-scope">Continue</span>

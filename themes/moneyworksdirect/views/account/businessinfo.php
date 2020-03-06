@@ -195,28 +195,7 @@
 						
 					</div>
 				</div>
-				<div class="row input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required ng-valid-max ng-valid-min ng-valid-parse" ng-form="housing_payment">
-					
-						<?php echo $form->labelEx($model,'fax'); ?>
-						<div class="group info-container">
-						<div class="info ng-scope ng-isolate-scope" est-pop-up="" info-message="housing_payment" ng-if="!housing_payment.$submitted" validation-message="ctrl.errorMessages.housing_payment">
-							<div class="popup-wrapper">
-								<div class="popup-section slide-up">
-									<div class="popup pp2">
-										<div class="arrow"></div>
-										<p class="ng-binding" ng-bind-html="message">
-										</p>
-									</div>
-								</div>
-								<div class="icon-field_info ppb2"></div>
-							</div>
-						</div>
-						<?php echo $form->textField($model,'fax',array('class'=>"phone ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off", 'placeholder'=>"Fax" )); ?>
-						<?php //echo $form->error($model,'fax'); ?>
-						
-					</div>
-				</div>
-				
+
 				<div class="row input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required ng-valid-max ng-valid-min ng-valid-parse" ng-form="housing_payment">
 					
 						<?php echo $form->labelEx($model,'business_email'); ?>

@@ -36,18 +36,6 @@
 			</div>
 			<a href="<?php echo Yii::app()->createUrl('account/personalinfo');?>">Your Info</a>
 		</div>
-		<div class="widget-section <?php if(($controller == 'account' && $action =='bizlocation') || CommonMethods::checkStepFilled(5)){ echo "active";}?>" >
-			<div class="circle-box">
-				<div class="circle"></div>
-			</div>
-			<a href="<?php echo Yii::app()->createUrl('account/bizlocation');?>">Business Location</a>
-		</div>
-		<div class="widget-section <?php if(($controller == 'account' && $action =='references') || CommonMethods::checkStepFilled(6)){ echo "active";}?>" >
-			<div class="circle-box">
-				<div class="circle"></div>
-			</div>
-			<a href="<?php echo Yii::app()->createUrl('account/references');?>">References</a>
-		</div>
 		<div class="widget-section <?php if(($controller == 'account' && $action =='uploads')){ echo "active";}?>" >
 			<div class="circle-box">
 				<div class="circle"></div>

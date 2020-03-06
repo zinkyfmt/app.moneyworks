@@ -1129,6 +1129,20 @@ ALTER TABLE `AuthItemChild`
   ADD CONSTRAINT `AuthItemChild_ibfk_1` FOREIGN KEY (`parent`) REFERENCES `AuthItem` (`name`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `AuthItemChild_ibfk_2` FOREIGN KEY (`child`) REFERENCES `AuthItem` (`name`) ON DELETE CASCADE ON UPDATE CASCADE;
 
+CREATE TABLE appmoneyworks.users_financials_documents (
+	id int(11) NOT NULL AUTO_INCREMENT,
+	user_id int(11) NULL,
+	filename varchar(255) NULL,
+	file_type varchar(255) NULL,
+	filepath varchar(255) NULL,
+	is_uploaded TINYINT(2) NULL,
+	CONSTRAINT users_financials_documents_PK PRIMARY KEY (id)
+)
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8
+COLLATE=utf8_general_ci;
+
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
