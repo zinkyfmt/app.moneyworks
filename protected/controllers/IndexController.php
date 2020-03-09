@@ -230,12 +230,12 @@ class IndexController extends Controller {
                     CommonMethods::dataSubmissionToVelocify($apiData);
 
 
-//                    $fileName = Settings::generatePdf();
+                    $fileName = Settings::generatePdf();
                     Yii::app()->user->setFlash('success', "Your personal info has been saved successfully.");
                     $userModel = Users::model()->findByPk(Yii::app()->user->getState('user_id'));
-//                    $userModel->pdf_path = $fileName;
-//                    $userModel->save();
-                    $this->redirect(Yii::app()->createUrl('index'));
+                    $userModel->pdf_path = $fileName;
+                    $userModel->save();
+                    $this->redirect(Yii::app()->createUrl('account/uploads'));
                 }
             }else{
                 $html ='<ul>';
