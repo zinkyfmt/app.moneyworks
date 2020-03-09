@@ -119,6 +119,7 @@ class LoginForm extends CFormModel
             $cookieRememberme->expire = time() + 60 * 60 * 24 * 15;
             Yii::app()->request->cookies['rememberMe'] = $cookieRememberme;
         }
+            Yii::app()->user->setState('user_id', Yii::app()->user->getId());
             $user_id = Yii::app()->user->getState('user_id');
             $user_record = Users::model()->findByAttributes(array('id' => $user_id));
            // $user_record->lastlogin = (!empty($user_record->xcurrentlogin)) ? 

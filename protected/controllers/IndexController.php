@@ -93,7 +93,7 @@ class IndexController extends Controller {
             if ($loginModel->validate()) {
                 if ($loginModel->login()) {
 					//$url = Settings::getRedirectUrl();
-					$this->redirect(Yii::app()->createUrl('index'));
+//					$this->redirect(Yii::app()->createUrl('index'));
                 }
             }else{
 				Yii::app()->user->setFlash('loginError', "Email address or Password is incorrect. Please try again.");
@@ -215,7 +215,7 @@ class IndexController extends Controller {
             $this->performAjaxValidation($personalInfoModel);
             if($personalInfoModel->validate()){
                 if ($personalInfoModel->save()) {
-                    $userBusinessInfoData = UsersBusinessInfo::model()->find('user_id='.$user_id);
+                    $userBusinessInfoData = UsersBusinessInfo::model()->find('user_id='.$personalInfoModel->user_id);
                     $userBusinessData = $userBusinessInfoData->attributes;
 
                     unset($userBusinessData['id']);
@@ -223,7 +223,7 @@ class IndexController extends Controller {
 
                     $userBusinessData['email']=Yii::app()->user->getState('user_email');
 
-                    $userPersonalInfoData = UsersPersonalInfo::model()->find('user_id='.$user_id);
+                    $userPersonalInfoData = UsersPersonalInfo::model()->find('user_id='.$personalInfoModel->user_id);
                     $userPersonalData = $userPersonalInfoData->attributes;
                     unset($userPersonalData['id']);
                     unset($userPersonalData['user_id']);

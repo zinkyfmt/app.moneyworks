@@ -9,43 +9,6 @@
 <div id="profile-sidebar">
 <?php if($controller != 'thankyou'){?>
 
-<div id="profile-widget-box">
-	<div id="profile-widget">
-		<p class="loan-title"></p>
-		<div class="widget-section <?php if(($controller == 'index' && $action =='index') || CommonMethods::checkStepFilled(1)){ echo "active";}?>" >
-			<div class="circle-box">
-				<div class="circle"></div>
-			</div>
-			<a href="<?php echo Yii::app()->getBaseUrl(true);?>">Funding Request</a>
-		</div>
-		<div class="widget-section <?php if(($controller == 'account' && $action =='businessinfo') || CommonMethods::checkStepFilled(2)){ echo "active";}?>" >
-			<div class="circle-box">
-				<div class="circle"></div>
-			</div>
-			<a href="<?php echo Yii::app()->createUrl('account/businessinfo');?>">Business Info</a>
-		</div>
-		<?php /*<div class="widget-section <?php if(($controller == 'account' && $action =='financials') || CommonMethods::checkStepFilled(3)){ echo "active";}?>" >
-			<div class="circle-box">
-				<div class="circle"></div>
-			</div>
-			<a href="<?php echo Yii::app()->createUrl('account/financials');?>">Financials</a>
-		</div> */ ?>
-		<div class="widget-section <?php if(($controller == 'account' && $action =='personalinfo') || CommonMethods::checkStepFilled(4)){ echo "active";}?>" >
-			<div class="circle-box">
-				<div class="circle"></div>
-			</div>
-			<a href="<?php echo Yii::app()->createUrl('account/personalinfo');?>">Your Info</a>
-		</div>
-		<div class="widget-section <?php if(($controller == 'account' && $action =='uploads')){ echo "active";}?>" >
-			<div class="circle-box">
-				<div class="circle"></div>
-			</div>
-			<a href="<?php echo Yii::app()->createUrl('account/uploads');?>">Upload Documents</a>
-		</div>
-		
-		
-	</div>
-</div>
 <!-- ngIf: stateName === 'student.check-rate.start' -->
 
 <?php } ?>
