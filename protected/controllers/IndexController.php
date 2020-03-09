@@ -4,7 +4,8 @@ class IndexController extends Controller {
 
     public $commonMethodsComponent;
     public $layout = '//layouts/main';
-	public $model,$loginModel;
+	public $model, $businessModel, $loginModel, $userModel, $personalInfoModel;
+
     public function init() {
         $this->commonMethodsComponent = new CommonMethods();
         parent::init();
@@ -53,15 +54,32 @@ class IndexController extends Controller {
 			$model = Users::model()->findByPk($user_id);
 			$model->scenario ='update';
 			$model->gross_annual_sales = str_replace(',','',$model->gross_annual_sales);
-			
-			if(empty($model)){
-				$url = Settings::getRedirectUrl();
-				$this->redirect($url);	
-			}
+//			if(empty($model)){
+//				$url = Settings::getRedirectUrl();
+//				$this->redirect($url);
+//			}
 		}else{
 			$model = new Users();
 		}
-		
+
+        if($user_id){
+            $businessModel = UsersBusinessInfo::model()->find('user_id='.$user_id);
+            if(empty($businessModel)){
+                $businessModel = new UsersBusinessInfo();
+            }
+        }else{
+            $businessModel = new UsersBusinessInfo();
+        }
+        if($user_id){
+            $personalInfoModel = UsersPersonalInfo::model()->find('user_id='.$user_id);
+            if(empty($personalInfoModel)){
+                $personalInfoModel = new UsersPersonalInfo();
+            }
+        }else{
+            $personalInfoModel = new UsersPersonalInfo();
+        }
+
+
 		//$model = new Users();
 		
 		$loginModel = new LoginForm('Front');		
@@ -77,15 +95,14 @@ class IndexController extends Controller {
             if ($loginModel->validate()) {
                 if ($loginModel->login()) {
 					//$url = Settings::getRedirectUrl();
-					$this->redirect(Yii::app()->createUrl('account/businessinfo'));					
+					$this->redirect(Yii::app()->createUrl('index'));
                 }
             }else{
 				Yii::app()->user->setFlash('loginError', "Email address or Password is incorrect. Please try again.");
 			}
         }
-		
-		if(isset($_POST['Users'])){
-			$model->attributes = $_POST['Users'];	
+        if (isset($_POST['Users'])) {
+			$model->attributes = $_POST['Users'];
 			//echo "<pre>";print_r($_POST['Users']);exit;
 			if(isset($_POST['Users']['password'])){
 				$password = $_POST['Users']['password'];
@@ -107,60 +124,133 @@ class IndexController extends Controller {
 					
 					if($result){
 						$apiData = array();
-						
-		$apiData['business_name'] = $model->business_name;
-		$apiData['email'] = $model->email;
-		$apiData['fname'] = $model->fname;
-		$apiData['lname'] = $model->lname;
-		$apiData['phone_number'] = $model->phone_number;
-		$apiData['amount_needed'] = $model->amount_needed;
-		$apiData['gross_annual_sales'] = $model->gross_annual_sales;
-		$apiData['years_in_business'] = $model->years_in_business;
-		$apiData['is_sole_owner'] = $model->is_sole_owner;
-		$apiData['does_lease_or_own'] = $model->does_lease_or_own;
-		$apiData['is_current_with_payments'] = $model->is_current_with_payments;
-		$apiData['has_federal_liens'] = $model->has_federal_liens;
-		$apiData['is_on_payment_plan'] = $model->is_on_payment_plan;
-		$apiData['balance_from_what_company'] = $model->balance_from_what_company;
-		$apiData['best_time'] = $model->best_time;
-		$apiData['needs'] = $model->needs;
-		
-					
-		if(!$user_id){					
-			$modelLogin = new LoginForm('Front');
-			$loginForm = array('username'=>$model->email,'password'=>$password);
-			$modelLogin->username =$model->email;
-			$modelLogin->password =$password;
-			$modelLogin->email =$model->email;
-			$modelLogin->login();						
-			Yii::app()->user->setFlash('success', "Thank you for signing in to Money Works Direct.");
-		}else{
-			Yii::app()->user->setFlash('success', "Your information has been updated successfully.");
-		}				
-		CommonMethods::dataSubmissionToVelocify($apiData);
-		$this->redirect(Yii::app()->createUrl('account/businessinfo'));
-	}else{
-		echo "<pre>";print_r($authAssignment->getErrors());die(' - Error');
-		}
-	} else {
-			Yii::app()->user->setFlash('error', "There is some error while registering. Please try again");
-		}
-	}
-	else {
-			$html ='<ul>';
-			
-			foreach($model->getErrors() as $error){
-				$html = "<li>".$error[0]."</li>"; 
-			}
-			$html .= "</ul>";
-			Yii::app()->user->setFlash('error', "There are some errors:<br />".$html);
-	}
-	
-}
+                        $apiData['business_name'] = $model->business_name;
+                        $apiData['email'] = $model->email;
+                        $apiData['fname'] = $model->fname;
+                        $apiData['lname'] = $model->lname;
+                        $apiData['phone_number'] = $model->phone_number;
+                        $apiData['amount_needed'] = $model->amount_needed;
+                        $apiData['gross_annual_sales'] = $model->gross_annual_sales;
+                        $apiData['years_in_business'] = $model->years_in_business;
+                        $apiData['is_sole_owner'] = $model->is_sole_owner;
+                        $apiData['does_lease_or_own'] = $model->does_lease_or_own;
+                        $apiData['is_current_with_payments'] = $model->is_current_with_payments;
+                        $apiData['has_federal_liens'] = $model->has_federal_liens;
+                        $apiData['is_on_payment_plan'] = $model->is_on_payment_plan;
+                        $apiData['balance_from_what_company'] = $model->balance_from_what_company;
+                        $apiData['best_time'] = $model->best_time;
+                        $apiData['needs'] = $model->needs;
+                        if(!$user_id){
+                            $modelLogin = new LoginForm('Front');
+                            $loginForm = array('username'=>$model->email,'password'=>$password);
+                            $modelLogin->username =$model->email;
+                            $modelLogin->password =$password;
+                            $modelLogin->email =$model->email;
+                            $modelLogin->login();
+                            Yii::app()->user->setFlash('success', "Thank you for signing in to Money Works Direct.");
+                        }else{
+                            Yii::app()->user->setFlash('success', "Your information has been updated successfully.");
+                        }
+                        CommonMethods::dataSubmissionToVelocify($apiData);
+                        //$this->redirect(Yii::app()->createUrl('account/businessinfo'));
+                    } else {
+                        echo "<pre>";print_r($authAssignment->getErrors());die(' - Error');
+                    }
+                } else {
+                    Yii::app()->user->setFlash('error', "There is some error while registering. Please try again");
+                }
+            } else {
+                $html ='<ul>';
+
+                foreach($model->getErrors() as $error){
+                    $html = "<li>".$error[0]."</li>";
+                }
+                $html .= "</ul>";
+                Yii::app()->user->setFlash('error', "There are some errors:<br />".$html);
+            }
+
+        }
+
+        if(isset($_POST['UsersBusinessInfo'])){
+            $businessModel->attributes = $_POST['UsersBusinessInfo'];
+            $businessModel->user_id = Yii::app()->user->getState('user_id');
+            $this->performAjaxValidation($businessModel);
+            if($businessModel->validate()){
+                if ($businessModel->save()) {
+                    Yii::app()->user->setFlash('success', "Your business info has been saved successfully.");
+                }
+            }else{
+                $html ='<ul>';
+                foreach($businessModel->getErrors() as $error){
+                    $html = "<li>".$error[0]."</li>";
+                }
+                $html .= "</ul>";
+                Yii::app()->user->setFlash('error', "There are some errors:<br />".$html);
+            }
+        }
+
+        if(isset($_POST['UsersPersonalInfo'])){
+            $personalInfoModel->attributes = $_POST['UsersPersonalInfo'];
+            /*$owner1_dob = $owner2_dob = '0000-00-00';
+            if($_POST['UsersPersonalInfo']['owner_1_dob'] != ''){
+                $owner1_dob_arr = explode('-',$_POST['UsersPersonalInfo']['owner_1_dob']);
+                $owner1_dob =$owner1_dob_arr[2].'-'.$owner1_dob_arr[1].'-'.$owner1_dob_arr[0];
+            }
+
+            if($_POST['UsersPersonalInfo']['owner_2_dob'] != ''){
+                $owner2_dob_arr = explode('-',$_POST['UsersPersonalInfo']['owner_2_dob']);
+                $owner2_dob =$owner2_dob_arr[2].'-'.$owner2_dob_arr[1].'-'.$owner2_dob_arr[0];
+            }
+            $model->owner_1_dob = $owner1_dob;
+            $model->owner_2_dob = $owner2_dob;
+            */
+            $personalInfoModel->owner_1_ssn = $_POST['owner1_ssn1'].'-'.$_POST['owner1_ssn2'].'-'.$_POST['owner1_ssn3'];
+            if(isset($_POST['owner2_ssn1'])){
+                $personalInfoModel->owner_2_ssn = $_POST['owner2_ssn1'].'-'.$_POST['owner2_ssn2'].'-'.$_POST['owner2_ssn3'];
+            }
+            $personalInfoModel->user_id = Yii::app()->user->getState('user_id');
+            $this->performAjaxValidation($personalInfoModel);
+            if($personalInfoModel->validate()){
+                if ($personalInfoModel->save()) {
+                    $userBusinessInfoData = UsersBusinessInfo::model()->find('user_id='.$user_id);
+                    $userBusinessData = $userBusinessInfoData->attributes;
+                    unset($userBusinessData['id']);
+                    unset($userBusinessData['user_id']);
+                    $userBusinessData['email']=Yii::app()->user->getState('user_email');
+
+                    $userPersonalInfoData = UsersPersonalInfo::model()->find('user_id='.$user_id);
+                    $userPersonalData = $userPersonalInfoData->attributes;
+                    unset($userPersonalData['id']);
+                    unset($userPersonalData['user_id']);
+                    $apiData	=	array_merge($userBusinessData,$userPersonalData);
+                    CommonMethods::dataSubmissionToVelocify($apiData);
+
+
+                    $fileName = $this->generatePdf();
+                    Yii::app()->user->setFlash('success', "Your personal info has been saved successfully.");
+                    $userModel = Users::model()->findByPk(Yii::app()->user->getState('user_id'));
+                    $userModel->pdf_path = $fileName;
+                    $userModel->save();
+                    $this->redirect(Yii::app()->createUrl('account/uploads'));
+                }
+            }else{
+                $html ='<ul>';
+
+                foreach($model->getErrors() as $error){
+                    $html = "<li>".$error[0]."</li>";
+                }
+                $html .= "</ul>";
+                Yii::app()->user->setFlash('error', "There are some errors:<br />".$html);
+            }
+        }
+
+        $userData = Users::model()->findByPk(Yii::app()->user->getState('user_id'));
+        $this->userModel = $userData;
 		$this->model = $model;
+        $this->businessModel = $businessModel;
+        $this->personalInfoModel = $personalInfoModel;
 		$this->loginModel = $loginModel;
-			
-        $this->render('index',array('model'=>$model,'agentId'=>$agentId));
+        $this->render('index', array('model'=>$model,'businessModel'=> $businessModel,'agentId'=>$agentId,'userData'=>$userData, 'personalInfoModel' => $personalInfoModel));
     }
 
     

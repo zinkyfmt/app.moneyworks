@@ -21,7 +21,7 @@ class Settings {
 		$usersData = Users::model()->findByPk($user_id);
 		$isDocumentSigned = $usersData->document_signed;
 		if(empty($userBusinessData)){
-			$action = 'account/businessinfo';
+			$action = 'index';
 		/*}elseif(empty($userFinancialData)){
 			$action = 'account/financials';
 		*/}elseif(empty($userPersonalData)){

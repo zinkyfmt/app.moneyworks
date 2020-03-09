@@ -22,7 +22,75 @@ if($model->funding_purpose != ''){
 
 ?>
 
-							
+<?php if(!Yii::app()->user->getState('user_id')){?>
+    <div class="box card register-box ng-scope" ng-if="!ctrl.isExistingClient">
+        <hgroup class="h1">
+            <h1>Create Account</h1>
+            <aside class="required">Required</aside>
+        </hgroup>
+        <div class="section ng-pristine ng-valid-email ng-invalid-required ng-pending ng-invalid-min-length ng-invalid-contains-symbol ng-valid-parse" ng-form="register_details_form">
+            <est-form-alert class="ng-isolate-scope" message="Some fields below require your attention" type="error">
+                <div style="height: 0px;" class="form-alert error">
+                    <span class="ng-binding">Some fields below require your attention</span>
+                </div>
+            </est-form-alert>
+            <!-- ngIf: ctrl.alerts.items.length -->
+            <div class="row input-row ng-pristine ng-isolate-scope ng-valid-email ng-invalid ng-invalid-required" ng-form="email">
+                <?php echo $form->labelEx($model,'email'); ?>
+                <div class="group">
+                    <div class="info ng-isolate-scope" est-pop-up="" input="email" validation-message="ctrl.errorMessages.email">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup ">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding" ng-bind-html="message"></p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info"></div>
+                        </div>
+                    </div>
+                    <?php echo $form->textField($model,'email',array('class'=>"ng-pristine ng-untouched ng-valid-email ng-invalid ng-invalid-required",'autocapitalize'=>"off", 'autocomplete'=>"off", 'autocorrect'=>"off",'ng-model'=>"ctrl.userData.email", 'placeholder'=>"Enter Email Address", 'required'=>'required')); ?>
+                    <?php //echo $form->error($model,'email'); ?>
+                </div>
+            </div>
+            <!-- ngIf: showPasswordRequirements -->
+            <div class="row input-row ng-pristine ng-isolate-scope ng-invalid-required ng-pending ng-invalid-min-length ng-invalid-contains-symbol corners" ng-class="{corners: !showPasswordRequirements}" ng-form="password" toggle="showPasswordRequirements">
+                <?php echo $form->labelEx($model,'password'); ?>
+                <div class="group">
+                    <?php echo $form->passwordField($model,'password',array('class'=>"password ng-pristine ng-untouched ng-invalid-required ng-pending ng-invalid-min-length ng-invalid-contains-symbol",'autocomplete'=>"off",  'est-password'=>"", 'est-password-field-toggle'=>"",'ng-model'=>"ctrl.userData.password", 'placeholder'=>"Create Secure Password", 'required'=>'required' )); ?>
+                    <?php //echo $form->error($model,'password'); ?>
+
+                </div>
+            </div>
+            <div class="row validate-password" ng-class="{hide: showPasswordRequirements}">
+                <div class="block" ng-class="{valid: containsLetter}">
+                    <div class="icon-needed"></div>
+                    <div class="icon-check-green"></div>
+                    <p>At least 1 letter</p>
+                </div>
+                <div class="block wide" ng-class="{valid: containsSymbol}">
+                    <div class="icon-needed"></div>
+                    <div class="icon-check-green"></div>
+                    <p>1 number or special character</p>
+                </div>
+                <div class="block" ng-class="{valid: minLength}">
+                    <div class="icon-needed"></div>
+                    <div class="icon-check-green"></div>
+                    <p>10 character min.</p>
+                </div>
+            </div>
+
+            <div class="row footer-row">
+                <div class="loan-rate-quote-summary-footer login-link">
+                    <p>
+                        <a class="lmop"><span class="cta-arrow">→&nbsp;&nbsp;</span>Already have an account? Sign In</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end ngIf: !ctrl.isExistingClient -->
+<?php } ?>
 <?php echo $form->hiddenField($model,'amount_needed',array('value'=>$value )) ?>
 	<!-- ngIf: isSLOEnabled() -->
 	<!-- STUDENT LOAN REFINANCE -->
@@ -454,74 +522,820 @@ if($model->funding_purpose != ''){
 		
 	</div>
 </div>
-<?php if(!Yii::app()->user->getState('user_id')){?>
-<div class="box card register-box ng-scope" ng-if="!ctrl.isExistingClient">
-	<hgroup class="h1">
-		<h1>Create Account</h1>
-		<aside class="required">Required</aside>
-	</hgroup>
-	<div class="section ng-pristine ng-valid-email ng-invalid-required ng-pending ng-invalid-min-length ng-invalid-contains-symbol ng-valid-parse" ng-form="register_details_form">
-		<est-form-alert class="ng-isolate-scope" message="Some fields below require your attention" type="error">
-			<div style="height: 0px;" class="form-alert error">
-				<span class="ng-binding">Some fields below require your attention</span>
-			</div>
-		</est-form-alert>
-		<!-- ngIf: ctrl.alerts.items.length -->
-		<div class="row input-row ng-pristine ng-isolate-scope ng-valid-email ng-invalid ng-invalid-required" ng-form="email">
-			<?php echo $form->labelEx($model,'email'); ?>
-			<div class="group">
-				<div class="info ng-isolate-scope" est-pop-up="" input="email" validation-message="ctrl.errorMessages.email">
-					<div class="popup-wrapper">
-						<div class="popup-section slide-up">
-							<div class="popup ">
-								<div class="arrow"></div>
-								<p class="ng-binding" ng-bind-html="message"></p>
-							</div>
-						</div>
-						<div class="icon-field_info"></div>
-					</div>
-				</div>
-				<?php echo $form->textField($model,'email',array('class'=>"ng-pristine ng-untouched ng-valid-email ng-invalid ng-invalid-required",'autocapitalize'=>"off", 'autocomplete'=>"off", 'autocorrect'=>"off",'ng-model'=>"ctrl.userData.email", 'placeholder'=>"Enter Email Address", 'required'=>'required')); ?>
-				<?php //echo $form->error($model,'email'); ?>
-			</div>
-		</div>
-		<!-- ngIf: showPasswordRequirements -->
-		<div class="row input-row ng-pristine ng-isolate-scope ng-invalid-required ng-pending ng-invalid-min-length ng-invalid-contains-symbol corners" ng-class="{corners: !showPasswordRequirements}" ng-form="password" toggle="showPasswordRequirements">
-			<?php echo $form->labelEx($model,'password'); ?>
-			<div class="group">
-				<?php echo $form->passwordField($model,'password',array('class'=>"password ng-pristine ng-untouched ng-invalid-required ng-pending ng-invalid-min-length ng-invalid-contains-symbol",'autocomplete'=>"off",  'est-password'=>"", 'est-password-field-toggle'=>"",'ng-model'=>"ctrl.userData.password", 'placeholder'=>"Create Secure Password", 'required'=>'required' )); ?>
-				<?php //echo $form->error($model,'password'); ?>
-				
-			</div>
-		</div>
-		<div class="row validate-password" ng-class="{hide: showPasswordRequirements}">
-			<div class="block" ng-class="{valid: containsLetter}">
-				<div class="icon-needed"></div>
-				<div class="icon-check-green"></div>
-				<p>At least 1 letter</p>
-			</div>
-			<div class="block wide" ng-class="{valid: containsSymbol}">
-				<div class="icon-needed"></div>
-				<div class="icon-check-green"></div>
-				<p>1 number or special character</p>
-			</div>
-			<div class="block" ng-class="{valid: minLength}">
-				<div class="icon-needed"></div>
-				<div class="icon-check-green"></div>
-				<p>10 character min.</p>
-			</div>
-		</div>
 
-		<div class="row footer-row">
-			<div class="loan-rate-quote-summary-footer login-link">
-				<p>
-					<a class="lmop"><span class="cta-arrow">→&nbsp;&nbsp;</span>Already have an account? Sign In</a>
-				</p>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- end ngIf: !ctrl.isExistingClient -->
+    <div class="box card ng-scope" ng-if="ctrl.Loan.isStudentLoanRefinance()">
+        <hgroup class="h1">
+            <h1>Business Info</h1>
+            <aside class="required">Required</aside>
+        </hgroup>
+        <div class="section ng-pristine ng-invalid ng-invalid-required ng-valid-maxlength ng-valid-max ng-valid-parse ng-invalid-min ng-valid-pattern" ng-form="details_form">
+
+            <div class="row input-row ng-pristine ng-scope ng-isolate-scope ng-invalid ng-invalid-required ng-valid-parse" ng-form="Users_business_name">
+                <?php echo $form->labelEx($businessModel,'dba_name'); ?>
+                <div class="group">
+                    <div class="info ng-isolate-scope" est-pop-up="" input="Users_business_name" validation-message="ctrl.errorMessages.Users_business_name">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup ng-hide">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding" ng-bind-html="message"></p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info"></div>
+                        </div>
+                    </div>
+                    <?php echo $form->textField($businessModel,'dba_name',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched", 'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Enter DBA Name", 'required'=>'required')); ?>
+                    <?php //echo $form->error($model,'dba_name'); ?>
+                </div>
+            </div>
+
+            <!-- end ngIf: !ctrl.userData.is_immutable && !expiredRate -->
+            <!-- ngIf: !ctrl.userData.is_immutable && !expiredRate -->
+            <div class="row input-row ng-pristine ng-scope ng-isolate-scope ng-invalid ng-invalid-required ng-valid-parse" ng-form="last_name">
+                <?php echo $form->labelEx($businessModel,'legal_name'); ?>
+                <div class="group">
+                    <div class="info ng-isolate-scope" est-pop-up="" input="last_name" validation-message="ctrl.errorMessages.last_name">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup ng-hide">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding"></p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info"></div>
+                        </div>
+                    </div>
+                    <?php echo $form->textField($businessModel,'legal_name',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off", 'placeholder'=>"Enter Legal Name", 'required'=>'required' )); ?>
+                    <?php //echo $form->error($model,'legal_name'); ?>
+
+                </div>
+            </div>
+            <!-- end ngIf: !ctrl.userData.is_immutable && !expiredRate -->
+            <div class="row input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required" ng-form="latest_degree">
+                <?php echo $form->labelEx($businessModel,'type_of_business'); ?>
+                <div class="group">
+
+                    <div class="info ng-isolate-scope" est-pop-up="" input="latest_degree" validation-message="ctrl.errorMessages.latest_degree">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup ng-hide">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding" ng-bind-html="message"></p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info"></div>
+                        </div>
+                    </div>
+                    <?php echo $form->textField($businessModel,'type_of_business',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off", 'placeholder'=>"Type of Business", 'required'=>'required' )); ?>
+                    <?php //echo $form->error($model,'type_of_business'); ?>
+
+                </div>
+            </div>
+            <div class="row input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required" ng-form="latest_school">
+                <?php echo $form->labelEx($businessModel,'tax_id'); ?>
+                <div class="group">
+                    <div class="info ng-isolate-scope" est-pop-up="" input="latest_school" validation-message="ctrl.errorMessages.latest_school">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup ng-hide">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding" ng-bind-html="message"></p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info"></div>
+                        </div>
+                    </div>
+                    <?php echo $form->textField($businessModel,'tax_id',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Enter Tax ID", 'required'=>'required' )); ?>
+                    <?php //echo $form->error($model,'tax_id'); ?>
+                </div>
+            </div>
+            <div class="row input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required ng-valid-maxlength" ng-form="education_dates" style="display: none;">
+                <?php echo $form->labelEx($businessModel,'business'); ?>
+
+                <div class="group">
+                    <div class="select-list">
+                        <div class="info ng-isolate-scope" est-pop-up="" input="gradmonth,gradyear" validation-message="ctrl.errorMessages.grad_date">
+                            <div class="popup-wrapper">
+                                <div class="popup-section slide-up">
+                                    <div class="popup ng-hide">
+                                        <div class="arrow"></div>
+                                        <p class="ng-binding" ng-bind-html="message"></p>
+                                    </div>
+                                </div>
+                                <div class="icon-field_info"></div>
+                            </div>
+                        </div>
+                        <?php echo $form->dropDownList($businessModel,'business',array('Corp'=>'Corp','LLC'=>'LLC','Sole Prop'=>'Sole Prop'),array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-touched", 'required'=>'required' )); ?>
+                        <?php //echo $form->error($model,'business'); ?>
+                    </div></div>
+            </div>
+
+            <div class="row input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required ng-valid-max ng-valid-parse ng-invalid-min" ng-form="annual_income">
+                <?php echo $form->labelEx($businessModel,'business_address'); ?>
+                <div class="group">
+                    <div class="info ng-isolate-scope" est-pop-up="" input="annual_income" validation-message="ctrl.errorMessages.annual_income">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup ng-hide">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding" ng-bind-html="message"></p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info"></div>
+                        </div>
+                    </div>
+
+                    <?php echo $form->textField($businessModel,'business_address',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-max ng-valid-parse ng-invalid-min ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Ex. 123 Main St, New York, NY 10036", 'required'=>'required' )); ?>
+                    <?php //echo $form->error($model,'business_address'); ?>
+                </div>
+            </div>
+            <div class="row input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required ng-valid-max ng-valid-parse ng-invalid-min" >
+
+                <?php echo $form->labelEx($businessModel,'full_billing_address'); ?>
+                <div class="group">
+                    <div class="info ng-scope ng-isolate-scope">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup pp1">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding"></p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info ppb1"></div>
+                        </div>
+                    </div>
+                    <?php echo $form->textField($businessModel,'full_billing_address',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Full Billing Address")); ?>
+                    <?php //echo $form->error($model,'full_billing_address'); ?>
+
+                </div>
+            </div>
+            <div class="row input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required ng-valid-max ng-valid-parse ng-invalid-min" ng-form="refinance_amount">
+                <?php echo $form->labelEx($businessModel,'phone_at_location'); ?>
+                <div class="group">
+                    <div class="info ng-isolate-scope">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding" ng-bind-html="message"></p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info"></div>
+                        </div>
+                    </div>
+                    <?php echo $form->textField($businessModel,'phone_at_location',array('class'=>"phone ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Phone at Location
+", 'required'=>'required' )); ?>
+                    <?php //echo $form->error($model,'phone_at_location'); ?>
+                </div>
+            </div>
+            <div class="row input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required ng-valid-max ng-valid-min ng-valid-parse" ng-form="housing_payment">
+
+                <?php echo $form->labelEx($businessModel,'best_phone'); ?>
+                <div class="group info-container">
+                    <div class="info ng-scope ng-isolate-scope" est-pop-up="" info-message="housing_payment" ng-if="!housing_payment.$submitted" validation-message="ctrl.errorMessages.housing_payment">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup pp2">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding" ng-bind-html="message">
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info ppb2"></div>
+                        </div>
+                    </div>
+                    <?php echo $form->textField($businessModel,'best_phone',array('class'=>"phone ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off", 'placeholder'=>"Best Phone")); ?>
+                    <?php //echo $form->error($model,'best_phone'); ?>
+
+                </div>
+            </div>
+
+            <div class="row input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required ng-valid-max ng-valid-min ng-valid-parse" ng-form="housing_payment">
+
+                <?php echo $form->labelEx($businessModel,'business_email'); ?>
+                <div class="group info-container">
+                    <div class="info ng-scope ng-isolate-scope" est-pop-up="" info-message="housing_payment" ng-if="!housing_payment.$submitted" validation-message="ctrl.errorMessages.housing_payment">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup pp2">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding" ng-bind-html="message">
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info ppb2"></div>
+                        </div>
+                    </div>
+                    <?php echo $form->textField($businessModel,'business_email',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off", 'placeholder'=>"Business Email")); ?>
+                    <?php //echo $form->error($model,'business_email'); ?>
+
+                </div>
+            </div><div class="row input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required ng-valid-max ng-valid-min ng-valid-parse" ng-form="housing_payment">
+
+                <?php echo $form->labelEx($businessModel,'website'); ?>
+                <div class="group info-container">
+                    <div class="info ng-scope ng-isolate-scope" est-pop-up="" info-message="housing_payment" ng-if="!housing_payment.$submitted" validation-message="ctrl.errorMessages.housing_payment">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup pp2">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding" ng-bind-html="message">
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info ppb2"></div>
+                        </div>
+                    </div>
+                    <?php echo $form->textField($businessModel,'website',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off", 'placeholder'=>"Website")); ?>
+                    <?php //echo $form->error($model,'website'); ?>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php
+
+        $dob1DMY=$dob1YY=$dob1MM=$dob1DD='';
+        $dob2DMY=$dob2YY=$dob2MM=$dob2DD='';
+        $ssn1YY=$ssn1MM=$ssn1DD='';
+        $ssn2YY=$ssn2MM=$ssn2DD='';
+        if($personalInfoModel->owner_1_ssn != ''){
+            $ssn1 = explode('-',$personalInfoModel->owner_1_ssn);
+            $ssn1DD = $ssn1[0];
+            $ssn1MM = $ssn1[1];
+            $ssn1YY = $ssn1[2];
+        }
+        if($personalInfoModel->owner_2_ssn != ''){
+            $ssn2 = explode('-',$personalInfoModel->owner_2_ssn);
+            $ssn2DD = $ssn2[0];
+            $ssn2MM = $ssn2[1];
+            $ssn2YY = $ssn2[2];
+        }
+    ?>
+    <div class="box card ng-scope" ng-if="ctrl.Loan.isStudentLoanRefinance()">
+        <hgroup class="h1">
+            <h1>Personal Info : Owner</h1>
+            <aside class="required">Required</aside>
+        </hgroup>
+        <div class="section ng-pristine ng-invalid ng-invalid-required ng-valid-maxlength ng-valid-max ng-valid-parse ng-invalid-min ng-valid-pattern" ng-form="details_form">
+            <?php
+            var_dump($personalInfoModel);die;
+            ?>
+            <div class="row input-row ng-pristine ng-scope ng-isolate-scope ng-invalid ng-invalid-required ng-valid-parse" ng-form="Users_business_name">
+                <?php echo $form->labelEx($personalInfoModel,'owner_1_name'); ?>
+                <div class="group">
+                    <div class="info ng-isolate-scope" est-pop-up="" input="Users_business_name" validation-message="ctrl.errorMessages.Users_business_name">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup ng-hide">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding" ng-bind-html="message"></p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info"></div>
+                        </div>
+                    </div>
+                    <?php echo $form->textField($personalInfoModel,'owner_1_name',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched", 'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Enter Name", 'required'=>'required','value'=>$userData->fname.' '.$userData->lname )); ?>
+                    <?php ////echo $form->error($model,'owner_1_name'); ?>
+                </div>
+            </div>
+
+            <!-- end ngIf: !ctrl.userData.is_immutable && !expiredRate -->
+            <!-- ngIf: !ctrl.userData.is_immutable && !expiredRate -->
+            <div class="row input-row ng-pristine ng-scope ng-isolate-scope ng-invalid ng-invalid-required ng-valid-parse" ng-form="last_name">
+                <?php echo $form->labelEx($personalInfoModel,'owner_1_title'); ?>
+                <div class="group">
+                    <div class="info ng-isolate-scope" est-pop-up="" input="last_name" validation-message="ctrl.errorMessages.last_name">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup ng-hide">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding"></p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info"></div>
+                        </div>
+                    </div>
+                    <?php echo $form->textField($personalInfoModel,'owner_1_title',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off", 'placeholder'=>"Owner Title", 'required'=>'required' )); ?>
+                    <?php ////echo $form->error($model,'owner_1_title'); ?>
+
+                </div>
+            </div>
+            <!-- end ngIf: !ctrl.userData.is_immutable && !expiredRate -->
+            <div class="row input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required" ng-form="latest_degree">
+                <?php echo $form->labelEx($personalInfoModel,'owner_1_dob'); ?>
+                <div class="group">
+
+                    <div class="info ng-isolate-scope" est-pop-up="" input="latest_degree" validation-message="ctrl.errorMessages.latest_degree">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup ng-hide">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding" ng-bind-html="message"></p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info"></div>
+                        </div>
+                    </div>
+                    <?php //echo $form->textField($model,'owner_1_dob',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off", 'placeholder'=>"Cash Advance With", 'required'=>'required' )); ?>
+
+                    <!--<input class="mm autotab ng-pristine ng-untouched ng-isolate-scope ng-invalid ng-invalid-required ng-valid-maxlength" est-auto-tab="" est-grad-date="month" id="grad_date_month" value="<?php //echo $dob1MM;?>"  maxlength="2" name="owner1_dob2" next-input-id="grad_date_year" ng-model="ctrl.QuickRateScoreModel.attributes.grad_month" placeholder="MM" required type="text">
+
+																			<div class="connector">/</div><input class="mm autotab ng-pristine ng-untouched ng-isolate-scope ng-invalid ng-invalid-required ng-valid-maxlength" est-auto-tab="" est-grad-date="month" maxlength="2" name="owner1_dob1" next-input-id="grad_date_year" ng-model="ctrl.QuickRateScoreModel.attributes.grad_month" placeholder="DD" value="<?php //echo $dob1DD;?>" required type="text">
+																			<div class="connector">/</div>
+																			<input class="yyyy ng-pristine ng-untouched autotab ng-isolate-scope ng-invalid ng-invalid-required ng-valid-maxlength" est-grad-date="year" maxlength="4" name="owner1_dob3" placeholder="YYYY" required type="text" value="<?php //echo $dob1YY;?>" > -->
+                    <?php echo $form->textField($personalInfoModel,'owner_1_dob',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off", 'placeholder'=>"dd-mm-yyyy", 'required'=>'required' )); ?>
+
+                    <?php //////echo $form->error($model,'owner_1_dob'); ?>
+
+                </div>
+            </div>
+            <div class="row input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required" ng-form="latest_school">
+                <?php echo $form->labelEx($personalInfoModel,'owner_1_ssn'); ?>
+                <div class="group wide-input-group-mmyyyy-range ng-pristine ng-untouched ng-valid ng-isolate-scope">
+                    <div class="info ng-isolate-scope" est-pop-up="" input="latest_school" validation-message="ctrl.errorMessages.latest_school">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup ng-hide">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding" ng-bind-html="message"></p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info"></div>
+                        </div>
+                    </div>
+
+                    <input value="<?php echo $ssn1DD;?>" autocomplete="off" class="icon-security-shield  autotab ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength" est-auto-tab="" id="owner1_ssn1" maxlength="3" name="owner1_ssn1" next-input-id="ssn2" ng-model="number.ssn1" placeholder="xxx" required size="10" type="password">
+                    <div class="connector">-</div>
+                    <input value="<?php echo $ssn1MM;?>" class="autotab ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength" autocomplete="off" est-auto-tab="" id="owner1_ssn2" maxlength="2" name="owner1_ssn2" next-input-id="ssn3" ng-model="number.ssn2" placeholder="xx" required type="password">
+                    <div class="connector">-</div>
+                    <input value="<?php echo $ssn1YY;?>" autocomplete="off" class="autotab mid-input ng-pristine ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength ng-touched" id="owner1_ssn3" maxlength="4" name="owner1_ssn3" placeholder="xxxx" required type="password">
+                </div>
+            </div>
+
+
+
+            <div class="row input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required ng-valid-maxlength" ng-form="education_dates">
+                <?php echo $form->labelEx($personalInfoModel,'owner_1_home_address'); ?>
+                <div class="group">
+                    <div class="info ng-isolate-scope" est-pop-up="" input="gradmonth,gradyear" validation-message="ctrl.errorMessages.grad_date">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup ng-hide">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding" ng-bind-html="message"></p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info"></div>
+                        </div>
+                    </div>
+                    <?php echo $form->textField($personalInfoModel,'owner_1_home_address',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off", 'placeholder'=>"Owner Home Address", 'required'=>'required' )); ?>
+                    <?php ////echo $form->error($model,'owner_1_home_address'); ?>
+                </div>
+            </div>
+            <div class="row input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required ng-valid-max ng-valid-parse ng-invalid-min" ng-form="annual_income">
+                <?php echo $form->labelEx($personalInfoModel,'owner_1_home_phone'); ?>
+                <div class="group">
+                    <div class="info ng-isolate-scope" est-pop-up="" input="annual_income" validation-message="ctrl.errorMessages.annual_income">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup ng-hide">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding" ng-bind-html="message"></p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info"></div>
+                        </div>
+                    </div>
+
+                    <?php echo $form->textField($personalInfoModel,'owner_1_home_phone',array('class'=>"phone ng-pristine ng-invalid ng-invalid-required ng-valid-max ng-valid-parse ng-invalid-min ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner Home Phone", 'required'=>'required','value'=>$userData->phone_number )); ?>
+                    <?php ////echo $form->error($model,'owner_1_home_phone'); ?>
+                </div>
+            </div>
+            <div class="row input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required ng-valid-max ng-valid-parse ng-invalid-min" >
+
+                <?php echo $form->labelEx($personalInfoModel,'owner_1_cell_phone'); ?>
+                <div class="group">
+                    <div class="info ng-scope ng-isolate-scope">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup pp1">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding"></p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info ppb1"></div>
+                        </div>
+                    </div>
+                    <?php echo $form->textField($personalInfoModel,'owner_1_cell_phone',array('class'=>"phone ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner Cell Phone")); ?>
+                    <?php ////echo $form->error($model,'owner_1_cell_phone'); ?>
+
+                </div>
+            </div>
+            <div class="row input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required ng-valid-max ng-valid-parse ng-invalid-min" ng-form="refinance_amount">
+                <?php echo $form->labelEx($personalInfoModel,'owner_1_email'); ?>
+                <div class="group">
+                    <div class="info ng-isolate-scope">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding" ng-bind-html="message"></p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info"></div>
+                        </div>
+                    </div>
+                    <?php echo $form->textField($personalInfoModel,'owner_1_email',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner Email")); ?>
+                    <?php ////echo $form->error($model,'owner_1_email'); ?>
+                </div>
+            </div>
+            <div class="row owner_1_own_or_rent input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required ng-valid-max ng-valid-min ng-valid-parse" ng-form="housing_payment">
+
+                <?php echo $form->labelEx($personalInfoModel,'owner_1_own_or_rent'); ?>
+                <div class="group">
+                    <div class="select-list">
+                        <div class="info ng-scope ng-isolate-scope" est-pop-up="" info-message="housing_payment" ng-if="!housing_payment.$submitted" validation-message="ctrl.errorMessages.housing_payment">
+                            <div class="popup-wrapper">
+                                <div class="popup-section slide-up">
+                                    <div class="popup pp2">
+                                        <div class="arrow"></div>
+                                        <p class="ng-binding" ng-bind-html="message">
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="icon-field_info ppb2"></div>
+                            </div>
+                        </div>
+                        <?php echo $form->dropDownList($personalInfoModel,'owner_1_own_or_rent',array('Own'=>'Own','Rent'=>'Rent'),array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off", 'placeholder'=>"Owner Own or Rent")); ?>
+                        <?php ////echo $form->error($model,'owner_1_own_or_rent'); ?>
+                    </div>
+                </div>
+            </div>
+            <div class="row owner_1_payment input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required ng-valid-max ng-valid-min ng-valid-parse" ng-form="housing_payment" style="display:<?php echo ($model->owner_1_own_or_rent=='Rent')?'block':'none';?>">
+
+                <?php echo $form->labelEx($personalInfoModel,'owner_1_payment'); ?>
+                <div class="group dollar-sign">
+                    <div class="info ng-scope ng-isolate-scope" est-pop-up="" info-message="housing_payment" ng-if="!housing_payment.$submitted" validation-message="ctrl.errorMessages.housing_payment">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup pp2">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding" ng-bind-html="message">
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info ppb2"></div>
+                        </div>
+                    </div>
+                    <?php echo $form->textField($personalInfoModel,'owner_1_payment',array('class'=>"money ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off", 'placeholder'=>"Enter Amount")); ?>
+                    <?php ////echo $form->error($model,'owner_1_payment'); ?>
+
+                </div>
+            </div>
+
+            <div class="row input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required ng-valid-max ng-valid-parse ng-invalid-min" >
+
+                <?php echo $form->labelEx($personalInfoModel,'owner_1_years_there'); ?>
+                <div class="group">
+                    <div class="info ng-scope ng-isolate-scope">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup pp1">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding"></p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info ppb1"></div>
+                        </div>
+                    </div>
+                    <?php echo $form->textField($personalInfoModel,'owner_1_years_there',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner Cell Phone")); ?>
+                    <?php ////echo $form->error($model,'owner_1_years_there'); ?>
+
+                </div>
+            </div>
+            <div class="row input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required ng-valid-max ng-valid-parse ng-invalid-min" ng-form="refinance_amount">
+                <?php echo $form->labelEx($personalInfoModel,'owner_1_drivers_license'); ?>
+                <div class="group">
+                    <div class="info ng-isolate-scope">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding" ng-bind-html="message"></p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info"></div>
+                        </div>
+                    </div>
+                    <?php echo $form->textField($personalInfoModel,'owner_1_drivers_license',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner Drivers License" )); ?>
+                    <?php ////echo $form->error($model,'owner_1_drivers_license'); ?>
+                </div>
+            </div>
+            <div class="row input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required ng-valid-max ng-valid-min ng-valid-parse" ng-form="housing_payment">
+
+                <?php echo $form->labelEx($personalInfoModel,'owner_1_drivers_license_state'); ?>
+                <div class="group">
+                    <div class="info ng-scope ng-isolate-scope" est-pop-up="" info-message="housing_payment" ng-if="!housing_payment.$submitted" validation-message="ctrl.errorMessages.housing_payment">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup pp2">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding" ng-bind-html="message">
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info ppb2"></div>
+                        </div>
+                    </div>
+                    <?php echo $form->textField($personalInfoModel,'owner_1_drivers_license_state',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off", 'placeholder'=>"Owner License State")); ?>
+                    <?php ////echo $form->error($model,'owner_1_drivers_license_state'); ?>
+
+                </div>
+            </div>
+
+        </div></div>
+<?php if($userData->is_sole_owner ==0){ ?>
+    <div class="box card ng-scope" ng-if="ctrl.Loan.isStudentLoanRefinance()">
+        <hgroup class="h1">
+            <h1>Personal Info : Owner #2</h1>
+            <aside class="required">Required</aside>
+        </hgroup>
+        <div class="section ng-pristine ng-invalid ng-invalid-required ng-valid-maxlength ng-valid-max ng-valid-parse ng-invalid-min ng-valid-pattern" ng-form="details_form">
+
+
+            <div class="row input-row ng-pristine ng-scope ng-isolate-scope ng-invalid ng-invalid-required ng-valid-parse" ng-form="Users_business_name">
+                <?php echo $form->labelEx($personalInfoModel,'owner_2_name'); ?>
+                <div class="group">
+                    <div class="info ng-isolate-scope" est-pop-up="" input="Users_business_name" validation-message="ctrl.errorMessages.Users_business_name">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup ng-hide">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding" ng-bind-html="message"></p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info"></div>
+                        </div>
+                    </div>
+                    <?php echo $form->textField($personalInfoModel,'owner_2_name',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched", 'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Enter Name")); ?>
+                    <?php ////echo $form->error($model,'owner_2_name'); ?>
+                </div>
+            </div>
+            <!-- end ngIf: !ctrl.userData.is_immutable && !expiredRate -->
+            <!-- ngIf: !ctrl.userData.is_immutable && !expiredRate -->
+            <div class="row input-row ng-pristine ng-scope ng-isolate-scope ng-invalid ng-invalid-required ng-valid-parse" ng-form="last_name">
+                <?php echo $form->labelEx($personalInfoModel,'owner_2_title'); ?>
+                <div class="group">
+                    <div class="info ng-isolate-scope" est-pop-up="" input="last_name" validation-message="ctrl.errorMessages.last_name">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup ng-hide">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding"></p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info"></div>
+                        </div>
+                    </div>
+                    <?php echo $form->textField($personalInfoModel,'owner_2_title',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off", 'placeholder'=>"Owner #1 Title")); ?>
+                    <?php ////echo $form->error($model,'owner_2_title'); ?>
+
+                </div>
+            </div>
+            <!-- end ngIf: !ctrl.userData.is_immutable && !expiredRate -->
+            <div class="row input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required" ng-form="latest_degree">
+                <?php echo $form->labelEx($personalInfoModel,'owner_2_dob'); ?>
+                <div class="group">
+
+                    <div class="info ng-isolate-scope" est-pop-up="" input="latest_degree" validation-message="ctrl.errorMessages.latest_degree">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup ng-hide">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding" ng-bind-html="message"></p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info"></div>
+                        </div>
+                    </div>
+                    <?php //echo $form->textField($model,'owner_2_dob',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off", 'placeholder'=>"Cash Advance With", 'required'=>'required' )); ?>
+                    <!--<input value="<?php //echo $dob2MM;?>" class="mm autotab ng-pristine ng-untouched ng-isolate-scope ng-invalid ng-invalid-required ng-valid-maxlength" est-auto-tab="" est-grad-date="month" id="grad_date_month" maxlength="2" name="owner2_dob2" next-input-id="grad_date_year" ng-model="ctrl.QuickRateScoreModel.attributes.grad_month" placeholder="MM"  type="text">
+
+																			<div class="connector">/</div><input class="autotab mm ng-pristine ng-untouched ng-isolate-scope ng-invalid ng-invalid-required ng-valid-maxlength" est-auto-tab="" est-grad-date="month" maxlength="2" name="owner2_dob1" next-input-id="grad_date_year" ng-model="ctrl.QuickRateScoreModel.attributes.grad_month" placeholder="DD" value="<?php //echo $dob2DD;?>"  type="text">
+																			<div class="connector">/</div>
+																			<input class="yyyy ng-pristine ng-untouched autotab ng-isolate-scope ng-invalid ng-invalid-required ng-valid-maxlength" est-grad-date="year" maxlength="4" name="owner2_dob3" ng-model="ctrl.QuickRateScoreModel.attributes.grad_year" placeholder="YYYY" value="<?php //echo $dob2YY;?>"  type="text"> -->
+                    <?php echo $form->textField($personalInfoModel,'owner_2_dob',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off", 'placeholder'=>"dd-mm-yyyy"  )); ?>
+
+                    <?php //////echo $form->error($model,'owner_2_dob'); ?>
+
+                </div>
+            </div>
+            <div class="row input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required" ng-form="latest_school">
+                <?php echo $form->labelEx($personalInfoModel,'owner_2_ssn'); ?>
+                <div class="group wide-input-group-mmyyyy-range ng-pristine ng-untouched ng-valid ng-isolate-scope">
+                    <div class="info ng-isolate-scope" est-pop-up="" input="latest_school" validation-message="ctrl.errorMessages.latest_school">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup ng-hide">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding" ng-bind-html="message"></p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info"></div>
+                        </div>
+                    </div>
+
+                    <input value="<?php echo $ssn2DD;?>" autocomplete="off" class="icon-security-shield  autotab ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength" est-auto-tab="" id="owner2_ssn1" maxlength="3" name="owner2_ssn1" next-input-id="ssn2" ng-model="number.ssn1" placeholder="xxx"  size="10" type="password">
+                    <div class="connector">-</div>
+                    <input value="<?php echo $ssn2MM;?>" class="ng-pristine autotab ng-untouched ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength" autocomplete="off" est-auto-tab="" id="owner2_ssn2" maxlength="2" name="owner2_ssn2" next-input-id="ssn3" ng-model="number.ssn2" placeholder="xx"  type="password">
+                    <div class="connector">-</div>
+                    <input value="<?php echo $ssn2YY;?>" autocomplete="off" class="autotab mid-input ng-pristine ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength ng-touched" id="owner2_ssn3" maxlength="4" name="owner2_ssn3" placeholder="xxxx" type="password">
+                </div>
+            </div>
+
+
+
+            <div class="row input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required ng-valid-maxlength" ng-form="education_dates">
+                <?php echo $form->labelEx($personalInfoModel,'owner_2_home_address'); ?>
+                <div class="group">
+                    <div class="info ng-isolate-scope" est-pop-up="" input="gradmonth,gradyear" validation-message="ctrl.errorMessages.grad_date">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup ng-hide">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding" ng-bind-html="message"></p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info"></div>
+                        </div>
+                    </div>
+                    <?php echo $form->textField($personalInfoModel,'owner_2_home_address',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off", 'placeholder'=>"Owner #1 Home Address")); ?>
+                    <?php ////echo $form->error($model,'owner_2_home_address'); ?>
+                </div>
+            </div>
+            <div class="row input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required ng-valid-max ng-valid-parse ng-invalid-min" ng-form="annual_income">
+                <?php echo $form->labelEx($personalInfoModel,'owner_2_home_phone'); ?>
+                <div class="group">
+                    <div class="info ng-isolate-scope" est-pop-up="" input="annual_income" validation-message="ctrl.errorMessages.annual_income">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup ng-hide">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding" ng-bind-html="message"></p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info"></div>
+                        </div>
+                    </div>
+
+                    <?php echo $form->textField($personalInfoModel,'owner_2_home_phone',array('class'=>"phone ng-pristine ng-invalid ng-invalid-required ng-valid-max ng-valid-parse ng-invalid-min ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner #1 Home Phone" )); ?>
+                    <?php ////echo $form->error($model,'owner_2_home_phone'); ?>
+                </div>
+            </div>
+            <div class="row input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required ng-valid-max ng-valid-parse ng-invalid-min" >
+
+                <?php echo $form->labelEx($personalInfoModel,'owner_2_cell_phone'); ?>
+                <div class="group">
+                    <div class="info ng-scope ng-isolate-scope">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup pp1">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding"></p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info ppb1"></div>
+                        </div>
+                    </div>
+                    <?php echo $form->textField($personalInfoModel,'owner_2_cell_phone',array('class'=>"phone ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner #1 Cell Phone" )); ?>
+                    <?php ////echo $form->error($model,'owner_2_cell_phone'); ?>
+
+                </div>
+            </div>
+            <div class="row input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required ng-valid-max ng-valid-parse ng-invalid-min" ng-form="refinance_amount">
+                <?php echo $form->labelEx($personalInfoModel,'owner_2_email'); ?>
+                <div class="group">
+                    <div class="info ng-isolate-scope">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding" ng-bind-html="message"></p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info"></div>
+                        </div>
+                    </div>
+                    <?php echo $form->textField($personalInfoModel,'owner_2_email',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner #1 Email" )); ?>
+                    <?php ////echo $form->error($model,'owner_2_email'); ?>
+                </div>
+            </div>
+            <div class="row input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required ng-valid-max ng-valid-min ng-valid-parse" ng-form="housing_payment">
+
+                <?php echo $form->labelEx($personalInfoModel,'owner_2_own_or_rent'); ?>
+                <div class="group">
+                    <div class="select-list">
+                        <div class="info ng-scope ng-isolate-scope" est-pop-up="" info-message="housing_payment" ng-if="!housing_payment.$submitted" validation-message="ctrl.errorMessages.housing_payment">
+                            <div class="popup-wrapper">
+                                <div class="popup-section slide-up">
+                                    <div class="popup pp2">
+                                        <div class="arrow"></div>
+                                        <p class="ng-binding" ng-bind-html="message">
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="icon-field_info ppb2"></div>
+                            </div>
+                        </div>
+                        <?php echo $form->dropDownList($personalInfoModel,'owner_2_own_or_rent',array('Own'=>'Own','Rent'=>'Rent'),array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off", 'placeholder'=>"Owner #1 Own or Rent")); ?>
+                        <?php ////echo $form->error($model,'owner_2_own_or_rent'); ?>
+                    </div>
+                </div>
+            </div>
+            <div class="row input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required ng-valid-max ng-valid-min ng-valid-parse" ng-form="housing_payment">
+
+                <?php echo $form->labelEx($personalInfoModel,'owner_2_payment'); ?>
+                <div class="group dollar-sign">
+                    <div class="info ng-scope ng-isolate-scope" est-pop-up="" info-message="housing_payment" ng-if="!housing_payment.$submitted" validation-message="ctrl.errorMessages.housing_payment">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup pp2">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding" ng-bind-html="message">
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info ppb2"></div>
+                        </div>
+                    </div>
+                    <?php echo $form->textField($personalInfoModel,'owner_2_payment',array('class'=>"money ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off", 'placeholder'=>"Enter Amount")); ?>
+                    <?php ////echo $form->error($model,'owner_2_payment'); ?>
+
+                </div>
+            </div>
+
+            <div class="row input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required ng-valid-max ng-valid-parse ng-invalid-min" >
+
+                <?php echo $form->labelEx($personalInfoModel,'owner_2_years_there'); ?>
+                <div class="group">
+                    <div class="info ng-scope ng-isolate-scope">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup pp1">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding"></p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info ppb1"></div>
+                        </div>
+                    </div>
+                    <?php echo $form->textField($personalInfoModel,'owner_2_years_there',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner #1 Cell Phone")); ?>
+                    <?php ////echo $form->error($model,'owner_2_years_there'); ?>
+
+                </div>
+            </div>
+            <div class="row input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required ng-valid-max ng-valid-parse ng-invalid-min" ng-form="refinance_amount">
+                <?php echo $form->labelEx($personalInfoModel,'owner_2_drivers_license'); ?>
+                <div class="group">
+                    <div class="info ng-isolate-scope">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding" ng-bind-html="message"></p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info"></div>
+                        </div>
+                    </div>
+                    <?php echo $form->textField($personalInfoModel,'owner_2_drivers_license',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner #1 Drivers License")); ?>
+                    <?php ////echo $form->error($model,'owner_2_drivers_license'); ?>
+                </div>
+            </div>
+            <div class="row input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required ng-valid-max ng-valid-min ng-valid-parse" ng-form="housing_payment">
+
+                <?php echo $form->labelEx($personalInfoModel,'owner_2_drivers_license_State'); ?>
+                <div class="group">
+                    <div class="info ng-scope ng-isolate-scope" est-pop-up="" info-message="housing_payment" ng-if="!housing_payment.$submitted" validation-message="ctrl.errorMessages.housing_payment">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup pp2">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding" ng-bind-html="message">
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info ppb2"></div>
+                        </div>
+                    </div>
+                    <?php echo $form->textField($personalInfoModel,'owner_2_drivers_license_State',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off", 'placeholder'=>"Owner #1 License State")); ?>
+                    <?php ////echo $form->error($model,'owner_2_drivers_license_State'); ?>
+
+                </div>
+            </div>
+        </div>
+    </div>
 <?php } ?>
 
 <div class="row action-row">
