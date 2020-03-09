@@ -778,9 +778,7 @@ if($model->funding_purpose != ''){
             <aside class="required">Required</aside>
         </hgroup>
         <div class="section ng-pristine ng-invalid ng-invalid-required ng-valid-maxlength ng-valid-max ng-valid-parse ng-invalid-min ng-valid-pattern" ng-form="details_form">
-            <?php
-            var_dump($personalInfoModel);die;
-            ?>
+
             <div class="row input-row ng-pristine ng-scope ng-isolate-scope ng-invalid ng-invalid-required ng-valid-parse" ng-form="Users_business_name">
                 <?php echo $form->labelEx($personalInfoModel,'owner_1_name'); ?>
                 <div class="group">
@@ -799,7 +797,6 @@ if($model->funding_purpose != ''){
                     <?php ////echo $form->error($model,'owner_1_name'); ?>
                 </div>
             </div>
-
             <!-- end ngIf: !ctrl.userData.is_immutable && !expiredRate -->
             <!-- ngIf: !ctrl.userData.is_immutable && !expiredRate -->
             <div class="row input-row ng-pristine ng-scope ng-isolate-scope ng-invalid ng-invalid-required ng-valid-parse" ng-form="last_name">
@@ -972,7 +969,7 @@ if($model->funding_purpose != ''){
                     </div>
                 </div>
             </div>
-            <div class="row owner_1_payment input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required ng-valid-max ng-valid-min ng-valid-parse" ng-form="housing_payment" style="display:<?php echo ($model->owner_1_own_or_rent=='Rent')?'block':'none';?>">
+            <div class="row owner_1_payment input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required ng-valid-max ng-valid-min ng-valid-parse" ng-form="housing_payment" style="display:<?php echo ($personalInfoModel->owner_1_own_or_rent=='Rent')?'block':'none';?>">
 
                 <?php echo $form->labelEx($personalInfoModel,'owner_1_payment'); ?>
                 <div class="group dollar-sign">
@@ -1055,8 +1052,7 @@ if($model->funding_purpose != ''){
             </div>
 
         </div></div>
-<?php if($userData->is_sole_owner ==0){ ?>
-    <div class="box card ng-scope" ng-if="ctrl.Loan.isStudentLoanRefinance()">
+    <div class="box card ng-scope is_sole" ng-if="ctrl.Loan.isStudentLoanRefinance()" style="display:<?php echo ($model->is_sole_owner=='0')?'block':'none';?>">
         <hgroup class="h1">
             <h1>Personal Info : Owner #2</h1>
             <aside class="required">Required</aside>
@@ -1098,7 +1094,7 @@ if($model->funding_purpose != ''){
                             <div class="icon-field_info"></div>
                         </div>
                     </div>
-                    <?php echo $form->textField($personalInfoModel,'owner_2_title',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off", 'placeholder'=>"Owner #1 Title")); ?>
+                    <?php echo $form->textField($personalInfoModel,'owner_2_title',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off", 'placeholder'=>"Owner #2 Title")); ?>
                     <?php ////echo $form->error($model,'owner_2_title'); ?>
 
                 </div>
@@ -1170,7 +1166,7 @@ if($model->funding_purpose != ''){
                             <div class="icon-field_info"></div>
                         </div>
                     </div>
-                    <?php echo $form->textField($personalInfoModel,'owner_2_home_address',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off", 'placeholder'=>"Owner #1 Home Address")); ?>
+                    <?php echo $form->textField($personalInfoModel,'owner_2_home_address',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off", 'placeholder'=>"Owner #2 Home Address")); ?>
                     <?php ////echo $form->error($model,'owner_2_home_address'); ?>
                 </div>
             </div>
@@ -1189,7 +1185,7 @@ if($model->funding_purpose != ''){
                         </div>
                     </div>
 
-                    <?php echo $form->textField($personalInfoModel,'owner_2_home_phone',array('class'=>"phone ng-pristine ng-invalid ng-invalid-required ng-valid-max ng-valid-parse ng-invalid-min ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner #1 Home Phone" )); ?>
+                    <?php echo $form->textField($personalInfoModel,'owner_2_home_phone',array('class'=>"phone ng-pristine ng-invalid ng-invalid-required ng-valid-max ng-valid-parse ng-invalid-min ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner #2 Home Phone" )); ?>
                     <?php ////echo $form->error($model,'owner_2_home_phone'); ?>
                 </div>
             </div>
@@ -1208,7 +1204,7 @@ if($model->funding_purpose != ''){
                             <div class="icon-field_info ppb1"></div>
                         </div>
                     </div>
-                    <?php echo $form->textField($personalInfoModel,'owner_2_cell_phone',array('class'=>"phone ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner #1 Cell Phone" )); ?>
+                    <?php echo $form->textField($personalInfoModel,'owner_2_cell_phone',array('class'=>"phone ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner #2 Cell Phone" )); ?>
                     <?php ////echo $form->error($model,'owner_2_cell_phone'); ?>
 
                 </div>
@@ -1227,7 +1223,7 @@ if($model->funding_purpose != ''){
                             <div class="icon-field_info"></div>
                         </div>
                     </div>
-                    <?php echo $form->textField($personalInfoModel,'owner_2_email',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner #1 Email" )); ?>
+                    <?php echo $form->textField($personalInfoModel,'owner_2_email',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner #2 Email" )); ?>
                     <?php ////echo $form->error($model,'owner_2_email'); ?>
                 </div>
             </div>
@@ -1248,7 +1244,7 @@ if($model->funding_purpose != ''){
                                 <div class="icon-field_info ppb2"></div>
                             </div>
                         </div>
-                        <?php echo $form->dropDownList($personalInfoModel,'owner_2_own_or_rent',array('Own'=>'Own','Rent'=>'Rent'),array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off", 'placeholder'=>"Owner #1 Own or Rent")); ?>
+                        <?php echo $form->dropDownList($personalInfoModel,'owner_2_own_or_rent',array('Own'=>'Own','Rent'=>'Rent'),array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off", 'placeholder'=>"Owner #2 Own or Rent")); ?>
                         <?php ////echo $form->error($model,'owner_2_own_or_rent'); ?>
                     </div>
                 </div>
@@ -1290,7 +1286,7 @@ if($model->funding_purpose != ''){
                             <div class="icon-field_info ppb1"></div>
                         </div>
                     </div>
-                    <?php echo $form->textField($personalInfoModel,'owner_2_years_there',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner #1 Cell Phone")); ?>
+                    <?php echo $form->textField($personalInfoModel,'owner_2_years_there',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner #2 Cell Phone")); ?>
                     <?php ////echo $form->error($model,'owner_2_years_there'); ?>
 
                 </div>
@@ -1309,7 +1305,7 @@ if($model->funding_purpose != ''){
                             <div class="icon-field_info"></div>
                         </div>
                     </div>
-                    <?php echo $form->textField($personalInfoModel,'owner_2_drivers_license',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner #1 Drivers License")); ?>
+                    <?php echo $form->textField($personalInfoModel,'owner_2_drivers_license',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner #2 Drivers License")); ?>
                     <?php ////echo $form->error($model,'owner_2_drivers_license'); ?>
                 </div>
             </div>
@@ -1329,15 +1325,13 @@ if($model->funding_purpose != ''){
                             <div class="icon-field_info ppb2"></div>
                         </div>
                     </div>
-                    <?php echo $form->textField($personalInfoModel,'owner_2_drivers_license_State',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off", 'placeholder'=>"Owner #1 License State")); ?>
+                    <?php echo $form->textField($personalInfoModel,'owner_2_drivers_license_State',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off", 'placeholder'=>"Owner #2 License State")); ?>
                     <?php ////echo $form->error($model,'owner_2_drivers_license_State'); ?>
 
                 </div>
             </div>
         </div>
     </div>
-<?php } ?>
-
 <div class="row action-row">
 	<button class="hero-button-with-arrow ng-isolate-scope" type="submit">
 		<!-- ngIf: loading -->

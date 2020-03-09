@@ -78,8 +78,6 @@ class IndexController extends Controller {
         }else{
             $personalInfoModel = new UsersPersonalInfo();
         }
-
-
 		//$model = new Users();
 		
 		$loginModel = new LoginForm('Front');		
@@ -174,6 +172,8 @@ class IndexController extends Controller {
         if(isset($_POST['UsersBusinessInfo'])){
             $businessModel->attributes = $_POST['UsersBusinessInfo'];
             $businessModel->user_id = Yii::app()->user->getState('user_id');
+            $businessModel->full_billing_address = $_POST['UsersBusinessInfo']['full_billing_address'];
+
             $this->performAjaxValidation($businessModel);
             if($businessModel->validate()){
                 if ($businessModel->save()) {
@@ -205,6 +205,8 @@ class IndexController extends Controller {
             $model->owner_2_dob = $owner2_dob;
             */
             $personalInfoModel->owner_1_ssn = $_POST['owner1_ssn1'].'-'.$_POST['owner1_ssn2'].'-'.$_POST['owner1_ssn3'];
+            $personalInfoModel->owner_1_payment = $_POST['UsersPersonalInfo']['owner_1_payment'];
+            $personalInfoModel->owner_2_payment = $_POST['UsersPersonalInfo']['owner_2_payment'];
             if(isset($_POST['owner2_ssn1'])){
                 $personalInfoModel->owner_2_ssn = $_POST['owner2_ssn1'].'-'.$_POST['owner2_ssn2'].'-'.$_POST['owner2_ssn3'];
             }
@@ -214,8 +216,10 @@ class IndexController extends Controller {
                 if ($personalInfoModel->save()) {
                     $userBusinessInfoData = UsersBusinessInfo::model()->find('user_id='.$user_id);
                     $userBusinessData = $userBusinessInfoData->attributes;
+
                     unset($userBusinessData['id']);
                     unset($userBusinessData['user_id']);
+
                     $userBusinessData['email']=Yii::app()->user->getState('user_email');
 
                     $userPersonalInfoData = UsersPersonalInfo::model()->find('user_id='.$user_id);
@@ -226,12 +230,12 @@ class IndexController extends Controller {
                     CommonMethods::dataSubmissionToVelocify($apiData);
 
 
-                    $fileName = $this->generatePdf();
+//                    $fileName = Settings::generatePdf();
                     Yii::app()->user->setFlash('success', "Your personal info has been saved successfully.");
                     $userModel = Users::model()->findByPk(Yii::app()->user->getState('user_id'));
-                    $userModel->pdf_path = $fileName;
-                    $userModel->save();
-                    $this->redirect(Yii::app()->createUrl('account/uploads'));
+//                    $userModel->pdf_path = $fileName;
+//                    $userModel->save();
+                    $this->redirect(Yii::app()->createUrl('index'));
                 }
             }else{
                 $html ='<ul>';
@@ -243,8 +247,15 @@ class IndexController extends Controller {
                 Yii::app()->user->setFlash('error', "There are some errors:<br />".$html);
             }
         }
-
-        $userData = Users::model()->findByPk(Yii::app()->user->getState('user_id'));
+        if ($user_id) {
+            $userData = Users::model()->findByPk(Yii::app()->user->getState('user_id'));
+        } else {
+            $userData = new \stdClass();
+            $userData->fname = '';
+            $userData->lname = '';
+            $userData->phone_number = '';
+            $userData->is_sole_owner = 1;
+        }
         $this->userModel = $userData;
 		$this->model = $model;
         $this->businessModel = $businessModel;
