@@ -701,7 +701,7 @@ class AccountController extends Controller
   </table>
   <table width="950" border="0" cellpadding="5" cellspacing="0" style="font-family:arial;" >
   <tr>
-    <td height="5"></td>
+    <td height="20"></td>
   </tr>
   <tr>
     <td style="border:solid 1px #000;">
@@ -783,7 +783,7 @@ class AccountController extends Controller
   
   <table width="950" border="0" cellpadding="5" cellspacing="0" style="font-family:arial;">
   <tr>
-    <td height="5"></td>
+    <td height="20"></td>
   </tr>
   <tr>
     <td style="border:solid 1px #000;"> 
@@ -881,18 +881,18 @@ class AccountController extends Controller
   
   <table width="950" border="0" cellpadding="0" cellspacing="0" >
       <tr>
-        <td height="5"></td>
+        <td height="20"></td>
       </tr>
       <tr>
         <td style="border:solid 1px #000;">
-          <table width="950" border="0" cellpadding="0" cellspacing="0" style="font-size:9px;text-align:justify;font-family:arial;">
+          <table width="950" border="0" cellpadding="10px" cellspacing="0" style="font-size:9px;text-align:justify;font-family:arial;">
             <tr><td>I hereby represent that all the above information is true and understand that making false statements might be considered fraud. By providing the above information, the applicant(s) authorize you to whom this application is made or your agents to investigate my/our financial responsibility and credit worthiness, specifically principal and corporate entities, and will provide financial statements, tax returns, etc. as you deem necessary. A photocopy of this authorization will be deemed as acceptable for release of credit information. I/We authorize Money Works Direct, Inc. to receive pertinet information regarding the commercial lease for the above referenced location from my leasing company and or agent. I/we authorize you to update my/our credit profile from time to time in the future, as you deem appropriate. By signing below, each of the aboe listed business and business ownet/officer (individually and collectiverly, "you") authorize Money Works Direct and each of its representatives, successors, assigns and designees ("Recipients") that may be involved with or acquire commercial loans having daily repayment features or purchases of future receivables including Merchant Cash Advance transcation, including without limitation the application therefor (collectively, "Transcation") to obtain consumer or personal, business and investigative reports and other information about you, including credit card processor statements and bank statements, from one or more consumer reporting agencies, such as TransUnion, Experian and Equifax, and from other credit bureaus, banks, creditors and other third parties. You also authorize Money Works Direct to transmit this application form, along with any of the foregoing informaiton obtained in connection with this application, to any or all of the Recipients for the foregoing purposes. You also consent to the release, by any creditor or financial institution, of any information relating to any of you, to Money Works Direct and to each of the Recipients, on its own behalf.
             </td></tr>
           </table>
         </td>
       </tr>
      <tr>
-        <td height="200"></td>
+        <td height="150"></td>
      </tr>
    <tr>
      <td>
@@ -914,7 +914,7 @@ class AccountController extends Controller
     <td height="50"></td>
     </tr>
     <tr><td>
-   <table width="950" border="0" cellpadding="10" cellspacing="0" style="font-size:12px;font-family:arial;">
+   <table width="950" border="0" cellpadding="5" cellspacing="0" style="font-size:12px;font-family:arial;">
     <tr>
         <td width="15%" >Signature#2</td>
         <td width="25%" style="border-bottom:1px solid #000;"></td>
@@ -1019,7 +1019,7 @@ class AccountController extends Controller
         // Create a |SignHere| tab somewhere on the document for the recipient to sign
     $signHere = new \DocuSign\eSign\Model\SignHere();
     $signHere->setXPosition("110");
-    $signHere->setYPosition("640");
+    $signHere->setYPosition("635");
     $signHere->setDocumentId("1");
     $signHere->setPageNumber("1");
     $signHere->setRecipientId($usersData->id);

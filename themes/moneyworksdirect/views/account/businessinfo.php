@@ -96,7 +96,7 @@
 						<?php //echo $form->error($model,'tax_id'); ?>
 					</div>
 				</div>
-				<div class="row input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required ng-valid-maxlength" ng-form="education_dates">
+				<div class="row input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required ng-valid-maxlength" ng-form="education_dates" style="display: none;">
 					<?php echo $form->labelEx($model,'business'); ?>
 					
 					<div class="group">
