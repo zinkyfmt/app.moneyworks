@@ -841,7 +841,7 @@ if($model->funding_purpose != ''){
 																			<div class="connector">/</div><input class="mm autotab ng-pristine ng-untouched ng-isolate-scope ng-invalid ng-invalid-required ng-valid-maxlength" est-auto-tab="" est-grad-date="month" maxlength="2" name="owner1_dob1" next-input-id="grad_date_year" ng-model="ctrl.QuickRateScoreModel.attributes.grad_month" placeholder="DD" value="<?php //echo $dob1DD;?>" required type="text">
 																			<div class="connector">/</div>
 																			<input class="yyyy ng-pristine ng-untouched autotab ng-isolate-scope ng-invalid ng-invalid-required ng-valid-maxlength" est-grad-date="year" maxlength="4" name="owner1_dob3" placeholder="YYYY" required type="text" value="<?php //echo $dob1YY;?>" > -->
-                    <?php echo $form->textField($personalInfoModel,'owner_1_dob',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off", 'placeholder'=>"dd-mm-yyyy", 'required'=>'required' )); ?>
+                    <?php echo $form->textField($personalInfoModel,'owner_1_dob',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off", 'placeholder'=>"yyyy-mm-dd", 'required'=>'required' )); ?>
 
                     <?php //////echo $form->error($model,'owner_1_dob'); ?>
 
@@ -1121,7 +1121,7 @@ if($model->funding_purpose != ''){
 																			<div class="connector">/</div><input class="autotab mm ng-pristine ng-untouched ng-isolate-scope ng-invalid ng-invalid-required ng-valid-maxlength" est-auto-tab="" est-grad-date="month" maxlength="2" name="owner2_dob1" next-input-id="grad_date_year" ng-model="ctrl.QuickRateScoreModel.attributes.grad_month" placeholder="DD" value="<?php //echo $dob2DD;?>"  type="text">
 																			<div class="connector">/</div>
 																			<input class="yyyy ng-pristine ng-untouched autotab ng-isolate-scope ng-invalid ng-invalid-required ng-valid-maxlength" est-grad-date="year" maxlength="4" name="owner2_dob3" ng-model="ctrl.QuickRateScoreModel.attributes.grad_year" placeholder="YYYY" value="<?php //echo $dob2YY;?>"  type="text"> -->
-                    <?php echo $form->textField($personalInfoModel,'owner_2_dob',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off", 'placeholder'=>"dd-mm-yyyy"  )); ?>
+                    <?php echo $form->textField($personalInfoModel,'owner_2_dob',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off", 'placeholder'=>"yyyy-mm-dd"  )); ?>
 
                     <?php //////echo $form->error($model,'owner_2_dob'); ?>
 

@@ -204,6 +204,7 @@ class IndexController extends Controller {
             $model->owner_1_dob = $owner1_dob;
             $model->owner_2_dob = $owner2_dob;
             */
+            $personalInfoModel->owner_2_dob = $_POST['UsersPersonalInfo']['owner_2_dob'];
             $personalInfoModel->owner_1_ssn = $_POST['owner1_ssn1'].'-'.$_POST['owner1_ssn2'].'-'.$_POST['owner1_ssn3'];
             $personalInfoModel->owner_1_payment = $_POST['UsersPersonalInfo']['owner_1_payment'];
             $personalInfoModel->owner_2_payment = $_POST['UsersPersonalInfo']['owner_2_payment'];
