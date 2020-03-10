@@ -1019,7 +1019,7 @@ class AccountController extends Controller
         // Create a |SignHere| tab somewhere on the document for the recipient to sign
     $signHere = new \DocuSign\eSign\Model\SignHere();
     $signHere->setXPosition("110");
-    $signHere->setYPosition("635");
+    $signHere->setYPosition("700");
     $signHere->setDocumentId("1");
     $signHere->setPageNumber("1");
     $signHere->setRecipientId($usersData->id);
@@ -1036,29 +1036,30 @@ class AccountController extends Controller
     $signer->setTabs($tabs);
     $signer->setClientUserId($usersData->id);  // must set this to embed the recipient!
 
-        $newId = 1000 + $usersData->id;
-        // Create a |SignHere2| tab somewhere on the document for the recipient to sign
-        $signHere2 = new \DocuSign\eSign\Model\SignHere();
-        $signHere2->setXPosition("110");
-        $signHere2->setYPosition("700");
-        $signHere2->setDocumentId("1");
-        $signHere2->setPageNumber("1");
-        $signHere2->setRecipientId($newId);
-        // add the signature tab to the envelope's list of tabs
-        $tabs2 = new DocuSign\eSign\Model\Tabs();
-        $tabs2->setSignHereTabs(array($signHere2));
-
-        // add a signer to the envelope
-        $signer2 = new \DocuSign\eSign\Model\Signer();
-        $signer2->setEmail('owner2email@gmail.com');
-        $signer2->setName('Owner 2 Name');
-        $signer2->setRecipientId($newId);
-        $signer2->setTabs($tabs2);
-        $signer2->setClientUserId($newId);  // must set this to embed the recipient!
+//        $newId = 1000 + $usersData->id;
+//        // Create a |SignHere2| tab somewhere on the document for the recipient to sign
+//        $signHere2 = new \DocuSign\eSign\Model\SignHere();
+//        $signHere2->setXPosition("110");
+//        $signHere2->setYPosition("700");
+//        $signHere2->setDocumentId("1");
+//        $signHere2->setPageNumber("1");
+//        $signHere2->setRecipientId($newId);
+//        // add the signature tab to the envelope's list of tabs
+//        $tabs2 = new DocuSign\eSign\Model\Tabs();
+//        $tabs2->setSignHereTabs(array($signHere2));
+//
+//        // add a signer to the envelope
+//        $signer2 = new \DocuSign\eSign\Model\Signer();
+//        $signer2->setEmail('owner2email@gmail.com');
+//        $signer2->setName('Owner 2 Name');
+//        $signer2->setRecipientId($newId);
+//        $signer2->setTabs($tabs2);
+//        $signer2->setClientUserId($newId);  // must set this to embed the recipient!
         try {
             // Add a recipient to sign the document
             $recipients = new DocuSign\eSign\Model\Recipients();
-            $recipients->setSigners([$signer, $signer2]);
+            $recipients->setSigners([$signer]);
+//            $recipients->setSigners([$signer, $signer2]);
             $envelop_definition = new DocuSign\eSign\Model\EnvelopeDefinition();
             $envelop_definition->setEmailSubject("[DocuSign PHP SDK] - Please sign this doc");
 
