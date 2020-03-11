@@ -1019,10 +1019,11 @@ class AccountController extends Controller
         // Create a |SignHere| tab somewhere on the document for the recipient to sign
     $signHere = new \DocuSign\eSign\Model\SignHere();
     $signHere->setXPosition("110");
-    $signHere->setYPosition("700");
+    $signHere->setYPosition("640");
     $signHere->setDocumentId("1");
     $signHere->setPageNumber("1");
     $signHere->setRecipientId($usersData->id);
+
 
     // add the signature tab to the envelope's list of tabs
     $tabs = new DocuSign\eSign\Model\Tabs();
@@ -1036,19 +1037,20 @@ class AccountController extends Controller
     $signer->setTabs($tabs);
     $signer->setClientUserId($usersData->id);  // must set this to embed the recipient!
 
-//        $newId = 1000 + $usersData->id;
-//        // Create a |SignHere2| tab somewhere on the document for the recipient to sign
+        //$newId = 100000 + $usersData->id;
+        // Create a |SignHere2| tab somewhere on the document for the recipient to sign
 //        $signHere2 = new \DocuSign\eSign\Model\SignHere();
 //        $signHere2->setXPosition("110");
 //        $signHere2->setYPosition("700");
 //        $signHere2->setDocumentId("1");
 //        $signHere2->setPageNumber("1");
 //        $signHere2->setRecipientId($newId);
+//        $signHere2->setOptional(true);
 //        // add the signature tab to the envelope's list of tabs
 //        $tabs2 = new DocuSign\eSign\Model\Tabs();
 //        $tabs2->setSignHereTabs(array($signHere2));
-//
-//        // add a signer to the envelope
+
+        // add a signer to the envelope
 //        $signer2 = new \DocuSign\eSign\Model\Signer();
 //        $signer2->setEmail('owner2email@gmail.com');
 //        $signer2->setName('Owner 2 Name');
@@ -1115,8 +1117,8 @@ class AccountController extends Controller
 			$model->save();
 						
 			$agentModel = Agents::model()->findByPk($model->agent_id);
-//			$receiverEmail = $agentModel->email;
-			$receiverEmail = 'minhtinhph2302@gmail.com';
+			$receiverEmail = $agentModel->email;
+//			$receiverEmail = 'minhtinhph2302@gmail.com';
 			/* Verification email */
 			$MailComponent = new MailComponent;			
 			$subject = $model->fname." ".$model->lname." has sent you their application.";
@@ -1130,7 +1132,6 @@ class AccountController extends Controller
 			
 			*/
 			$MailComponent->mailsend($receiverEmail, 'Money Works  Direct', $subject, $templateContent, '','Money Works Direct');
-			
 			$this->redirect(Yii::app()->createUrl('thankyou/index'));
 		}else{
 			$this->redirect(Yii::app()->createUrl('thankyou/failure'));
@@ -1199,8 +1200,8 @@ class AccountController extends Controller
 					$userData->save();
 					
 					$agentModel = Agents::model()->findByPk($userData->agent_id);
-//					$receiverEmail = $agentModel->email;
-					$receiverEmail = 'minhtinhph2302@gmail.com';
+					$receiverEmail = $agentModel->email;
+					//$receiverEmail = 'vnkmrjain@gmail.com';
 					/* Verification email */
 					$MailComponent = new MailComponent;			
 					$subject = $userData->fname." ".$userData->lname." has uploaded documents.";
