@@ -1115,8 +1115,8 @@ class AccountController extends Controller
 			$model->save();
 						
 			$agentModel = Agents::model()->findByPk($model->agent_id);
-			$receiverEmail = $agentModel->email;
-			//$receiverEmail = 'nick@moneyworksdirect.com';
+//			$receiverEmail = $agentModel->email;
+			$receiverEmail = 'minhtinhph2302@gmail.com';
 			/* Verification email */
 			$MailComponent = new MailComponent;			
 			$subject = $model->fname." ".$model->lname." has sent you their application.";
@@ -1199,8 +1199,8 @@ class AccountController extends Controller
 					$userData->save();
 					
 					$agentModel = Agents::model()->findByPk($userData->agent_id);
-					$receiverEmail = $agentModel->email;
-					//$receiverEmail = 'vnkmrjain@gmail.com';
+//					$receiverEmail = $agentModel->email;
+					$receiverEmail = 'minhtinhph2302@gmail.com';
 					/* Verification email */
 					$MailComponent = new MailComponent;			
 					$subject = $userData->fname." ".$userData->lname." has uploaded documents.";

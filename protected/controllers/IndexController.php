@@ -91,10 +91,11 @@ class IndexController extends Controller {
 			
             // validate user input and redirect to the previous page if valid
             if ($loginModel->validate()) {
-                if ($loginModel->login()) {
+                $loginModel->login();
+                //if ($loginModel->login()) {
 					//$url = Settings::getRedirectUrl();
 //					$this->redirect(Yii::app()->createUrl('index'));
-                }
+                //}
             }else{
 				Yii::app()->user->setFlash('loginError', "Email address or Password is incorrect. Please try again.");
 			}

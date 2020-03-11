@@ -1,4 +1,5 @@
-/upload/docusign-pdf/
-/protected/config/
-/protected/runtime/
-/protected/vendor/
+/upload/*
+/protected/config/*
+/protected/runtime/*
+/protected/vendor/*
+/assets/*
