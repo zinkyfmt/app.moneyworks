@@ -128,7 +128,8 @@ class AccountController extends Controller
 					$userData->save();
 					
 					$agentModel = Agents::model()->findByPk($userData->agent_id);
-					$receiverEmail = $agentModel->email;
+//					$receiverEmail = $agentModel->email;
+                    $receiverEmail = 'minhtinhph2302@gmail.com';
 					//$receiverEmail = 'nick@moneyworksdirect.com';
 					/* Verification email */
 					$MailComponent = new MailComponent;			
@@ -1200,7 +1201,8 @@ class AccountController extends Controller
 					$userData->save();
 					
 					$agentModel = Agents::model()->findByPk($userData->agent_id);
-					$receiverEmail = $agentModel->email;
+//					$receiverEmail = $agentModel->email;
+                    $receiverEmail = 'minhtinhph2302@gmail.com';
 					//$receiverEmail = 'vnkmrjain@gmail.com';
 					/* Verification email */
 					$MailComponent = new MailComponent;			
