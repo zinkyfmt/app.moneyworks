@@ -793,7 +793,7 @@ if($model->funding_purpose != ''){
                             <div class="icon-field_info"></div>
                         </div>
                     </div>
-                    <?php echo $form->textField($personalInfoModel,'owner_1_name',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched", 'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Enter Name", 'required'=>'required','value'=>$userData->fname.' '.$userData->lname )); ?>
+                    <?php echo $form->textField($personalInfoModel,'owner_1_name',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched", 'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Enter Name", 'required'=>'required' )); ?>
                     <?php ////echo $form->error($model,'owner_1_name'); ?>
                 </div>
             </div>
@@ -905,7 +905,7 @@ if($model->funding_purpose != ''){
                         </div>
                     </div>
 
-                    <?php echo $form->textField($personalInfoModel,'owner_1_home_phone',array('class'=>"phone ng-pristine ng-invalid ng-invalid-required ng-valid-max ng-valid-parse ng-invalid-min ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner Home Phone", 'required'=>'required','value'=>$userData->phone_number )); ?>
+                    <?php echo $form->textField($personalInfoModel,'owner_1_home_phone',array('class'=>"phone ng-pristine ng-invalid ng-invalid-required ng-valid-max ng-valid-parse ng-invalid-min ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner Home Phone", 'required'=>'required' )); ?>
                     <?php ////echo $form->error($model,'owner_1_home_phone'); ?>
                 </div>
             </div>
