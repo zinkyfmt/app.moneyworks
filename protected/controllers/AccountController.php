@@ -1118,8 +1118,8 @@ class AccountController extends Controller
 			$model->save();
 						
 			$agentModel = Agents::model()->findByPk($model->agent_id);
-			$receiverEmail = $agentModel->email;
-//			$receiverEmail = 'minhtinhph2302@gmail.com';
+			//$receiverEmail = $agentModel->email;
+			$receiverEmail = 'minhtinhph2302@gmail.com';
 			/* Verification email */
 			$MailComponent = new MailComponent;			
 			$subject = $model->fname." ".$model->lname." has sent you their application.";
