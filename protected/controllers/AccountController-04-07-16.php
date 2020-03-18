@@ -796,7 +796,7 @@ class AccountController extends Controller
 		<td width="13%" style="border-bottom:1px solid #000;">'.$userPersonalData->owner_1_payment.' '.$userPersonalData->owner_1_own_or_rent.'</td>
 		<td width="15%" align="center">Years There</td>
 		<td width="10%" style="border-bottom:1px solid #000;">'.$userPersonalData->owner_1_years_there.'</td>
-		<td width="14%">Drivers Lience #</td>
+		<td width="14%">Drivers License #</td>
 		<td width="16%" style="border-bottom:1px solid #000;">'.$userPersonalData->owner_1_drivers_license.'</td>
 		<td width="10%">State</td>
 		<td width="10%" style="border-bottom:1px solid #000;">'.$userPersonalData->owner_1_drivers_license_state.'</td>
@@ -841,7 +841,7 @@ class AccountController extends Controller
 		<td width="13%" style="border-bottom:1px solid #000;">'.$userPersonalData->owner_2_own_or_rent.'</td>
 		<td width="15%" align="center">Years There</td>
 		<td width="10%" style="border-bottom:1px solid #000;">'.$userPersonalData->owner_2_years_there.'</td>
-		<td width="14%">Drivers Lience #</td>
+		<td width="14%">Drivers License #</td>
 		<td width="16%" style="border-bottom:1px solid #000;">'.$userPersonalData->owner_2_drivers_license.'</td>
 		<td width="10%">State</td>
 		<td width="10%" style="border-bottom:1px solid #000;">'.$userPersonalData->owner_2_drivers_license_State.'</td>

@@ -160,7 +160,7 @@ Sales Rep: Julian Giannuzzi</td>
    <tr>
     <td width="25%">Own / Rent  $ </td>
     <td width="25%">Years There</td>
-     <td width="25%">Drivers Lience #</td>
+     <td width="25%">Drivers License #</td>
     <td width="25%">State</td>
   </tr>
   </table>
@@ -243,7 +243,7 @@ Sales Rep: Julian Giannuzzi</td>
    <tr>
     <td width="25%">Own / Rent  $ </td>
     <td width="25%">Years There</td>
-     <td width="25%">Drivers Lience #</td>
+     <td width="25%">Drivers License #</td>
     <td width="25%">State</td>
   </tr>
   </table>

@@ -745,7 +745,7 @@ Sales Rep: Julian Giannuzzi</td>
 		<td width="13%">'.$userPersonalData->owner_1_own_or_rent.'</td>
 		<td width="12%">Years There</td>
 		<td width="13%">'.$userPersonalData->owner_1_years_there.'</td>
-		<td width="12%">Drivers Lience #</td>
+		<td width="12%">Drivers License #</td>
 		<td width="13%">'.$userPersonalData->owner_1_drivers_license.'</td>
 		<td width="12%">State</td>
 		<td width="13%">'.$userPersonalData->owner_1_drivers_license_state.'</td>
@@ -787,7 +787,7 @@ Sales Rep: Julian Giannuzzi</td>
 		<td width="13%">'.$userPersonalData->owner_2_own_or_rent.'</td>
 		<td width="12%">Years There</td>
 		<td width="13%">'.$userPersonalData->owner_2_years_there.'</td>
-		<td width="12%">Drivers Lience #</td>
+		<td width="12%">Drivers License #</td>
 		<td width="13%">'.$userPersonalData->owner_2_drivers_license.'</td>
 		<td width="12%">State</td>
 		<td width="13%">'.$userPersonalData->owner_2_drivers_license_State.'</td>
