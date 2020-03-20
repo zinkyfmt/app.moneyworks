@@ -193,7 +193,7 @@ if($model->owner_2_ssn != ''){
 								<div class="icon-field_info ppb1"></div>
 							</div>
 						</div>				
-						<?php echo $form->textField($model,'owner_1_cell_phone',array('class'=>"phone ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner Cell Phone")); ?>
+						<?php echo $form->textField($model,'owner_1_cell_phone',array('class'=>"phone ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner Mobile Phone")); ?>
 						<?php ////echo $form->error($model,'owner_1_cell_phone'); ?>
 						
 					</div>
@@ -275,7 +275,7 @@ if($model->owner_2_ssn != ''){
 								<div class="icon-field_info ppb1"></div>
 							</div>
 						</div>				
-						<?php echo $form->textField($model,'owner_1_years_there',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner Cell Phone")); ?>
+						<?php echo $form->textField($model,'owner_1_years_there',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner Mobile Phone")); ?>
 						<?php ////echo $form->error($model,'owner_1_years_there'); ?>
 						
 					</div>
@@ -474,7 +474,7 @@ if($model->owner_2_ssn != ''){
 								<div class="icon-field_info ppb1"></div>
 							</div>
 						</div>				
-						<?php echo $form->textField($model,'owner_2_cell_phone',array('class'=>"phone ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner #1 Cell Phone" )); ?>
+						<?php echo $form->textField($model,'owner_2_cell_phone',array('class'=>"phone ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner #1 Mobile Phone" )); ?>
 						<?php ////echo $form->error($model,'owner_2_cell_phone'); ?>
 						
 					</div>
@@ -556,7 +556,7 @@ if($model->owner_2_ssn != ''){
 								<div class="icon-field_info ppb1"></div>
 							</div>
 						</div>				
-						<?php echo $form->textField($model,'owner_2_years_there',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner #1 Cell Phone")); ?>
+						<?php echo $form->textField($model,'owner_2_years_there',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner #1 Mobile Phone")); ?>
 						<?php ////echo $form->error($model,'owner_2_years_there'); ?>
 						
 					</div>

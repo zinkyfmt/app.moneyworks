@@ -22,75 +22,6 @@ if($model->funding_purpose != ''){
 
 ?>
 
-<?php if(!Yii::app()->user->getState('user_id')){?>
-    <div class="box card register-box ng-scope" ng-if="!ctrl.isExistingClient">
-        <hgroup class="h1">
-            <h1>Create Account</h1>
-            <aside class="required">Required</aside>
-        </hgroup>
-        <div class="section ng-pristine ng-valid-email ng-invalid-required ng-pending ng-invalid-min-length ng-invalid-contains-symbol ng-valid-parse" ng-form="register_details_form">
-            <est-form-alert class="ng-isolate-scope" message="Some fields below require your attention" type="error">
-                <div style="height: 0px;" class="form-alert error">
-                    <span class="ng-binding">Some fields below require your attention</span>
-                </div>
-            </est-form-alert>
-            <!-- ngIf: ctrl.alerts.items.length -->
-            <div class="row input-row ng-pristine ng-isolate-scope ng-valid-email ng-invalid ng-invalid-required" ng-form="email">
-                <?php echo $form->labelEx($model,'email'); ?>
-                <div class="group">
-                    <div class="info ng-isolate-scope" est-pop-up="" input="email" validation-message="ctrl.errorMessages.email">
-                        <div class="popup-wrapper">
-                            <div class="popup-section slide-up">
-                                <div class="popup ">
-                                    <div class="arrow"></div>
-                                    <p class="ng-binding" ng-bind-html="message"></p>
-                                </div>
-                            </div>
-                            <div class="icon-field_info"></div>
-                        </div>
-                    </div>
-                    <?php echo $form->textField($model,'email',array('class'=>"ng-pristine ng-untouched ng-valid-email ng-invalid ng-invalid-required",'autocapitalize'=>"off", 'autocomplete'=>"off", 'autocorrect'=>"off",'ng-model'=>"ctrl.userData.email", 'placeholder'=>"Enter Email Address", 'required'=>'required')); ?>
-                    <?php //echo $form->error($model,'email'); ?>
-                </div>
-            </div>
-            <!-- ngIf: showPasswordRequirements -->
-            <div class="row input-row ng-pristine ng-isolate-scope ng-invalid-required ng-pending ng-invalid-min-length ng-invalid-contains-symbol corners" ng-class="{corners: !showPasswordRequirements}" ng-form="password" toggle="showPasswordRequirements">
-                <?php echo $form->labelEx($model,'password'); ?>
-                <div class="group">
-                    <?php echo $form->passwordField($model,'password',array('class'=>"password ng-pristine ng-untouched ng-invalid-required ng-pending ng-invalid-min-length ng-invalid-contains-symbol",'autocomplete'=>"off",  'est-password'=>"", 'est-password-field-toggle'=>"",'ng-model'=>"ctrl.userData.password", 'placeholder'=>"Create Secure Password", 'required'=>'required' )); ?>
-                    <?php //echo $form->error($model,'password'); ?>
-
-                </div>
-            </div>
-            <div class="row validate-password" ng-class="{hide: showPasswordRequirements}">
-                <div class="block" ng-class="{valid: containsLetter}">
-                    <div class="icon-needed"></div>
-                    <div class="icon-check-green"></div>
-                    <p>At least 1 letter</p>
-                </div>
-                <div class="block wide" ng-class="{valid: containsSymbol}">
-                    <div class="icon-needed"></div>
-                    <div class="icon-check-green"></div>
-                    <p>1 number or special character</p>
-                </div>
-                <div class="block" ng-class="{valid: minLength}">
-                    <div class="icon-needed"></div>
-                    <div class="icon-check-green"></div>
-                    <p>10 character min.</p>
-                </div>
-            </div>
-
-            <div class="row footer-row">
-                <div class="loan-rate-quote-summary-footer login-link">
-                    <p>
-                        <a class="lmop"><span class="cta-arrow">→&nbsp;&nbsp;</span>Already have an account? Sign In</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end ngIf: !ctrl.isExistingClient -->
-<?php } ?>
 <?php echo $form->hiddenField($model,'amount_needed',array('value'=>$value )) ?>
 	<!-- ngIf: isSLOEnabled() -->
 	<!-- STUDENT LOAN REFINANCE -->
@@ -924,11 +855,12 @@ if($model->funding_purpose != ''){
                             <div class="icon-field_info ppb1"></div>
                         </div>
                     </div>
-                    <?php echo $form->textField($personalInfoModel,'owner_1_cell_phone',array('class'=>"phone ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner Cell Phone")); ?>
+                    <?php echo $form->textField($personalInfoModel,'owner_1_cell_phone',array('class'=>"phone ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner Mobile Phone", 'required'=>'required')); ?>
                     <?php ////echo $form->error($model,'owner_1_cell_phone'); ?>
 
                 </div>
             </div>
+
             <div class="row input-row ng-pristine ng-isolate-scope ng-invalid ng-invalid-required ng-valid-max ng-valid-parse ng-invalid-min" ng-form="refinance_amount">
                 <?php echo $form->labelEx($personalInfoModel,'owner_1_email'); ?>
                 <div class="group">
@@ -1006,7 +938,7 @@ if($model->funding_purpose != ''){
                             <div class="icon-field_info ppb1"></div>
                         </div>
                     </div>
-                    <?php echo $form->textField($personalInfoModel,'owner_1_years_there',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner Cell Phone")); ?>
+                    <?php echo $form->textField($personalInfoModel,'owner_1_years_there',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner Years There")); ?>
                     <?php ////echo $form->error($model,'owner_1_years_there'); ?>
 
                 </div>
@@ -1204,7 +1136,7 @@ if($model->funding_purpose != ''){
                             <div class="icon-field_info ppb1"></div>
                         </div>
                     </div>
-                    <?php echo $form->textField($personalInfoModel,'owner_2_cell_phone',array('class'=>"phone ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner #2 Cell Phone" )); ?>
+                    <?php echo $form->textField($personalInfoModel,'owner_2_cell_phone',array('class'=>"phone ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner #2 Mobile Phone" )); ?>
                     <?php ////echo $form->error($model,'owner_2_cell_phone'); ?>
 
                 </div>
@@ -1286,7 +1218,7 @@ if($model->funding_purpose != ''){
                             <div class="icon-field_info ppb1"></div>
                         </div>
                     </div>
-                    <?php echo $form->textField($personalInfoModel,'owner_2_years_there',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner #2 Cell Phone")); ?>
+                    <?php echo $form->textField($personalInfoModel,'owner_2_years_there',array('class'=>"ng-pristine ng-invalid ng-invalid-required ng-valid-parse ng-touched",'autocapitalize'=>"on", 'autocorrect'=>"off",'placeholder'=>"Owner #2 Years There")); ?>
                     <?php ////echo $form->error($model,'owner_2_years_there'); ?>
 
                 </div>
@@ -1332,6 +1264,75 @@ if($model->funding_purpose != ''){
             </div>
         </div>
     </div>
+<?php if(!Yii::app()->user->getState('user_id')){?>
+    <div class="box card register-box ng-scope" ng-if="!ctrl.isExistingClient">
+        <hgroup class="h1">
+            <h1>Create Account</h1>
+            <aside class="required">Required</aside>
+        </hgroup>
+        <div class="section ng-pristine ng-valid-email ng-invalid-required ng-pending ng-invalid-min-length ng-invalid-contains-symbol ng-valid-parse" ng-form="register_details_form">
+            <est-form-alert class="ng-isolate-scope" message="Some fields below require your attention" type="error">
+                <div style="height: 0px;" class="form-alert error">
+                    <span class="ng-binding">Some fields below require your attention</span>
+                </div>
+            </est-form-alert>
+            <!-- ngIf: ctrl.alerts.items.length -->
+            <div class="row input-row ng-pristine ng-isolate-scope ng-valid-email ng-invalid ng-invalid-required" ng-form="email">
+                <?php echo $form->labelEx($model,'email'); ?>
+                <div class="group">
+                    <div class="info ng-isolate-scope" est-pop-up="" input="email" validation-message="ctrl.errorMessages.email">
+                        <div class="popup-wrapper">
+                            <div class="popup-section slide-up">
+                                <div class="popup ">
+                                    <div class="arrow"></div>
+                                    <p class="ng-binding" ng-bind-html="message"></p>
+                                </div>
+                            </div>
+                            <div class="icon-field_info"></div>
+                        </div>
+                    </div>
+                    <?php echo $form->textField($model,'email',array('class'=>"ng-pristine ng-untouched ng-valid-email ng-invalid ng-invalid-required",'autocapitalize'=>"off", 'autocomplete'=>"off", 'autocorrect'=>"off",'ng-model'=>"ctrl.userData.email", 'placeholder'=>"Enter Email Address", 'required'=>'required')); ?>
+                    <?php //echo $form->error($model,'email'); ?>
+                </div>
+            </div>
+            <!-- ngIf: showPasswordRequirements -->
+            <div class="row input-row ng-pristine ng-isolate-scope ng-invalid-required ng-pending ng-invalid-min-length ng-invalid-contains-symbol corners" ng-class="{corners: !showPasswordRequirements}" ng-form="password" toggle="showPasswordRequirements">
+                <?php echo $form->labelEx($model,'password'); ?>
+                <div class="group">
+                    <?php echo $form->passwordField($model,'password',array('class'=>"password ng-pristine ng-untouched ng-invalid-required ng-pending ng-invalid-min-length ng-invalid-contains-symbol",'autocomplete'=>"off",  'est-password'=>"", 'est-password-field-toggle'=>"",'ng-model'=>"ctrl.userData.password", 'placeholder'=>"Create Secure Password", 'required'=>'required' )); ?>
+                    <?php //echo $form->error($model,'password'); ?>
+
+                </div>
+            </div>
+            <div class="row validate-password" ng-class="{hide: showPasswordRequirements}">
+                <div class="block" ng-class="{valid: containsLetter}">
+                    <div class="icon-needed"></div>
+                    <div class="icon-check-green"></div>
+                    <p>At least 1 letter</p>
+                </div>
+                <div class="block wide" ng-class="{valid: containsSymbol}">
+                    <div class="icon-needed"></div>
+                    <div class="icon-check-green"></div>
+                    <p>1 number or special character</p>
+                </div>
+                <div class="block" ng-class="{valid: minLength}">
+                    <div class="icon-needed"></div>
+                    <div class="icon-check-green"></div>
+                    <p>10 character min.</p>
+                </div>
+            </div>
+
+            <div class="row footer-row">
+                <div class="loan-rate-quote-summary-footer login-link">
+                    <p>
+                        <a class="lmop"><span class="cta-arrow">→&nbsp;&nbsp;</span>Already have an account? Sign In</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end ngIf: !ctrl.isExistingClient -->
+<?php } ?>
 <div class="row action-row">
 	<button class="hero-button-with-arrow ng-isolate-scope" type="submit">
 		<!-- ngIf: loading -->

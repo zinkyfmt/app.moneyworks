@@ -151,7 +151,7 @@ Sales Rep: Julian Giannuzzi</td>
     <table width="100%" border="0" cellpadding="0" cellspacing="0">
    <tr>
     <td width="33%">Home Phone</td>
-    <td width="33%">Cell Phone</td>
+    <td width="33%">Mobile Phone</td>
     <td width="33%" colspan="2">Email</td>
   </tr>
   </table></td></tr>
@@ -189,7 +189,7 @@ Sales Rep: Julian Giannuzzi</td>
     <table width="100%" border="0" cellpadding="0" cellspacing="0">
    <tr>
     <td width="33%">Home Phone</td>
-    <td width="33%">Cell Phone</td>
+    <td width="33%">Mobile Phone</td>
     <td width="33%">Email</td>
   </tr>
   </table>

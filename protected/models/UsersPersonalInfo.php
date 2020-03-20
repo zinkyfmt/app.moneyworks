@@ -51,7 +51,7 @@ class UsersPersonalInfo extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('owner_1_name, owner_1_title, owner_1_dob, owner_1_ssn, owner_1_home_address, owner_1_home_phone', 'required'),
+			array('owner_1_name, owner_1_title, owner_1_dob, owner_1_ssn, owner_1_home_address, owner_1_home_phone, owner_1_cell_phone', 'required'),
 			array('id, user_id', 'numerical', 'integerOnly'=>true),
 			//array('owner_1_payment, owner_2_payment', 'numerical'),
 			array('owner_1_email, owner_2_email', 'email'),
@@ -87,7 +87,7 @@ class UsersPersonalInfo extends CActiveRecord
 			'owner_1_ssn' => 'Owner Ssn',
 			'owner_1_home_address' => 'Owner Home Address',
 			'owner_1_home_phone' => 'Owner Home Phone',
-			'owner_1_cell_phone' => 'Owner Cell Phone',
+			'owner_1_cell_phone' => 'Owner Mobile Phone',
 			'owner_1_email' => 'Owner Email',
 			'owner_1_own_or_rent' => 'Owner Own Or Rent',
 			'owner_1_payment' => 'Owner Payment',
@@ -100,7 +100,7 @@ class UsersPersonalInfo extends CActiveRecord
 			'owner_2_ssn' => 'Owner 2 Ssn',
 			'owner_2_home_address' => 'Owner 2 Home Address',
 			'owner_2_home_phone' => 'Owner 2 Home Phone',
-			'owner_2_cell_phone' => 'Owner 2 Cell Phone',
+			'owner_2_cell_phone' => 'Owner 2 Mobile Phone',
 			'owner_2_email' => 'Owner 2 Email',
 			'owner_2_own_or_rent' => 'Owner 2 Own Or Rent',
 			'owner_2_payment' => 'Owner 2 Payment',

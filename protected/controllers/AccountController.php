@@ -813,7 +813,7 @@ class AccountController extends Controller
    <tr>
 		<td width="17%">Home Phone</td>
 		<td width="18%" style="border-bottom:1px solid #000;">'.$userPersonalData->owner_1_home_phone.'</td>
-		<td width="15%">Cell Phone</td>
+		<td width="15%">Mobile Phone</td>
 		<td width="15%" style="border-bottom:1px solid #000;">'.$userPersonalData->owner_1_cell_phone.'</td>
 		<td width="15%">Email</td>
 		<td width="20%" style="border-bottom:1px solid #000;">'.$userPersonalData->owner_1_email.'</td>
@@ -858,7 +858,7 @@ class AccountController extends Controller
    <tr>
 		<td width="17%">Home Phone</td>
 		<td width="13%" style="border-bottom:1px solid #000;">'.$userPersonalData->owner_2_home_phone.'</td>
-		<td width="10%">Cell Phone</td>
+		<td width="10%">Mobile Phone</td>
 		<td width="10%" style="border-bottom:1px solid #000;">'.$userPersonalData->owner_2_cell_phone.'</td>
 		<td width="15%">Email</td>
 		<td width="35%" style="border-bottom:1px solid #000;">'.$userPersonalData->owner_2_email.'</td>

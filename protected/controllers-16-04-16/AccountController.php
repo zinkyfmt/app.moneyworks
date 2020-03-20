@@ -732,7 +732,7 @@ Sales Rep: Julian Giannuzzi</td>
    <tr>
 		<td width="20%" colspan="2">Home Phone</td>
 		<td width="15%">'.$userPersonalData->owner_1_home_phone.'</td>
-		<td width="15%">Cell Phone</td>
+		<td width="15%">Mobile Phone</td>
 		<td width="15%">'.$userPersonalData->owner_1_cell_phone.'</td>
 		<td width="15%">Email</td>
 		<td width="20%" colspan="2">'.$userPersonalData->owner_1_email.'</td>
@@ -774,7 +774,7 @@ Sales Rep: Julian Giannuzzi</td>
    <tr>
 		<td width="20%" colspan="2">Home Phone</td>
 		<td width="15%">'.$userPersonalData->owner_2_home_phone.'</td>
-		<td width="15%">Cell Phone</td>
+		<td width="15%">Mobile Phone</td>
 		<td width="15%">'.$userPersonalData->owner_2_cell_phone.'</td>
 		<td width="15%">Email</td>
 		<td width="20%" colspan="2">'.$userPersonalData->owner_2_email.'</td>

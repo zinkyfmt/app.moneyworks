@@ -187,7 +187,7 @@ function attributeSupported(attribute) {
 						<?php $wording='';$i=1; 
 						$action = Yii::app()->controller->action->id;
 							if($action == 'index'){
-								$wording='Funding Details';
+								$wording='Funding Applications';
 												$i=1;
 								}
 							if($action == 'businessinfo'){	$wording='Business Info';
